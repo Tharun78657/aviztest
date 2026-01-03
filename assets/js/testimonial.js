@@ -84,6 +84,12 @@ class InfiniteScrollMoments {
   }
 
   handleLeftArrow() {
+    // Resume the slideshow if it's paused
+    if (this.isSlideshowPaused) {
+      this.resumeSlideshow();
+      this.isSlideshowPaused = false;
+    }
+
     // Scroll left by one card width
     const cardWidth = 420; // 400px card + 20px gap
     if (this.scrollTrack) {
