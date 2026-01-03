@@ -307,10 +307,9 @@ class InfiniteScrollMoments {
     card.className = "moment-card";
 
     if (moment.type === "video") {
-      const isInstagram = moment.videoUrl.includes('instagram.com');
       const uniqueId = `${moment.videoId}-${Math.random().toString(36).substr(2, 9)}`;
       card.innerHTML = `
-        <div class="moment-image moment-video ${isInstagram ? 'instagram-container' : ''}">
+        <div class="moment-image moment-video">
           <iframe 
             id="${uniqueId}"
             src="${moment.videoUrl}" 
