@@ -1,4 +1,5 @@
 const academyMoments = [
+  // All Videos First
   {
     id: 1,
     type: "video",
@@ -8,29 +9,30 @@ const academyMoments = [
   },
   {
     id: 2,
-    image: "assets/images/ACS02536.JPG",
-    caption: "Collaborative Learning – Students Engaging in Hands-on AWS Practice",
-    type: "image"
-  },
-  {
-    id: 3,
     type: "video",
     videoUrl: "https://www.youtube.com/embed/QyoQGtOhpgo?enablejsapi=1",
     videoId: "video-newbatch",
     caption: "📢 New Batch Starting Soon – Join the Cloud Journey!"
   },
   {
-    id: 4,
-    image: "assets/images/ACS02658.JPG",
-    caption: "Expert Guidance – Avinash Leading Technical Discussions",
-    type: "image"
-  },
-  {
-    id: 5,
+    id: 3,
     type: "video",
     videoUrl: "https://www.youtube.com/embed/scmCUfcfv4A?enablejsapi=1",
     videoId: "video-mlrit",
     caption: "☁️ AWS Student Annual Community Day at MLRIT"
+  },
+  // All Images Second
+  {
+    id: 4,
+    image: "assets/images/ACS02536.JPG",
+    caption: "Collaborative Learning – Students Engaging in Hands-on AWS Practice",
+    type: "image"
+  },
+  {
+    id: 5,
+    image: "assets/images/ACS02658.JPG",
+    caption: "Expert Guidance – Avinash Leading Technical Discussions",
+    type: "image"
   },
   {
     id: 6,

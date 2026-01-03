@@ -1356,28 +1356,17 @@ span.enroll_btn {
     transform: scale(1.1);
 }
 
-/* Overlay for captions */
+/* Overlay for captions - Hidden */
 .moment-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    padding: 20px;
-    transform: translateY(100%);
-    transition: transform 0.4s ease;
+    display: none;
 }
 
 .moment-card:hover .moment-overlay {
-    transform: translateY(0);
+    display: none;
 }
 
 .moment-caption {
-    color: white;
-    font-size: 14px;
-    font-weight: 500;
-    margin: 0;
-    text-align: center;
+    display: none;
 }
 
 /* Video iframe styles */
