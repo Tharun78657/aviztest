@@ -1387,6 +1387,25 @@ span.enroll_btn {
 .moment-video {
     background: #000;
     border-radius: 16px;
+    overflow: hidden;
+}
+
+/* Crop Instagram chrome to show only video */
+.instagram-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.instagram-container iframe {
+    width: 100% !important;
+    height: 180% !important;
+    /* Scale to hide chrome */
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    border-radius: 0 !important;
+    /* Avoid double rounding issues while cropped */
 }
 
 /* Arrow Navigation Buttons */
