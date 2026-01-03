@@ -1417,11 +1417,11 @@ span.enroll_btn {
 }
 
 .slideshow-arrow-left {
-    left: 10px;
+    left: -80px;
 }
 
 .slideshow-arrow-right {
-    right: 10px;
+    right: -80px;
 }
 
 /* Responsive arrow buttons */
@@ -1430,6 +1430,14 @@ span.enroll_btn {
         width: 40px;
         height: 40px;
         font-size: 24px;
+    }
+
+    .slideshow-arrow-left {
+        left: 5px;
+    }
+
+    .slideshow-arrow-right {
+        right: 5px;
     }
 }
 
