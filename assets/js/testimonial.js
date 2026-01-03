@@ -21,6 +21,20 @@ const academyMoments = [
     videoId: "video-mlrit",
     caption: "☁️ AWS Student Annual Community Day at MLRIT"
   },
+  {
+    id: 7,
+    type: "video",
+    videoUrl: "https://www.instagram.com/reel/DTCkroYAcD_/embed",
+    videoId: "insta-reel-1",
+    caption: "🚀 Hands-on Learning and Student Success"
+  },
+  {
+    id: 8,
+    type: "video",
+    videoUrl: "https://www.instagram.com/reel/DRkGykFEnyV/embed",
+    videoId: "insta-reel-2",
+    caption: "✨ Amazing Moments from our AWS Community"
+  },
   // All Images Second
   {
     id: 4,
@@ -137,13 +151,18 @@ class InfiniteScrollMoments {
     const videoIframes = document.querySelectorAll('.moment-video iframe');
 
     videoIframes.forEach((iframe) => {
-      const player = new YT.Player(iframe, {
-        events: {
-          'onStateChange': (event) => this.onPlayerStateChange(event, player),
-          'onReady': (event) => this.onPlayerReady(event, player)
-        }
-      });
-      this.players.push(player);
+      // Only initialize YouTube Player for YouTube iframes
+      if (iframe.src.includes('youtube.com')) {
+        const player = new YT.Player(iframe, {
+          events: {
+            'onStateChange': (event) => this.onPlayerStateChange(event, player),
+            'onReady': (event) => this.onPlayerReady(event, player)
+          }
+        });
+        // Attach the iframe to the player object for easier visibility checking
+        player.iframeElement = iframe;
+        this.players.push(player);
+      }
     });
 
     // Start monitoring scroll position to stop videos when out of view
@@ -213,34 +232,30 @@ class InfiniteScrollMoments {
   checkVideoVisibility() {
     if (!this.currentlyPlayingPlayer) return;
 
-    const videoIframes = document.querySelectorAll('.moment-video iframe');
     const containerRect = this.wrapper.getBoundingClientRect();
+    const iframe = this.currentlyPlayingPlayer.iframeElement;
 
-    videoIframes.forEach((iframe, index) => {
-      const iframeRect = iframe.getBoundingClientRect();
-      const player = this.players[index];
+    if (!iframe) return;
 
-      // Check if this is the currently playing player
-      if (player === this.currentlyPlayingPlayer) {
-        // Check if iframe is mostly out of view
-        const isVisible = (
-          iframeRect.right > containerRect.left + 50 &&
-          iframeRect.left < containerRect.right - 50
-        );
+    const iframeRect = iframe.getBoundingClientRect();
 
-        if (!isVisible) {
-          // Video has scrolled out of view, stop it
-          try {
-            player.pauseVideo();
-            this.currentlyPlayingPlayer = null;
-            this.pauseSlideshow();
-            this.isSlideshowPaused = true;
-          } catch (e) {
-            // Ignore errors
-          }
-        }
+    // Check if iframe is mostly out of view
+    const isVisible = (
+      iframeRect.right > containerRect.left + 50 &&
+      iframeRect.left < containerRect.right - 50
+    );
+
+    if (!isVisible) {
+      // Video has scrolled out of view, stop it
+      try {
+        this.currentlyPlayingPlayer.pauseVideo();
+        this.currentlyPlayingPlayer = null;
+        this.pauseSlideshow();
+        this.isSlideshowPaused = true;
+      } catch (e) {
+        // Ignore errors
       }
-    });
+    }
   }
 
   pauseSlideshow() {
