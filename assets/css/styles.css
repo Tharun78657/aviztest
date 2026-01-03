@@ -1278,16 +1278,19 @@ span.enroll_btn {
     height: auto;
     min-height: 420px;
     background-color: var(--colors-white-50);
-    padding: 2.5rem 2rem;
+    padding: 2.5rem 8rem;
+    /* Significantly increased for a large gap */
     border-radius: 20px;
-    overflow: hidden;
+    overflow: visible;
+    /* Allow arrows to be seen */
 }
 
 .carousel-container {
     width: 100%;
     max-width: 1200px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    /* Allow arrows to be seen */
     padding: 0;
 }
 
@@ -1388,48 +1391,46 @@ span.enroll_btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid rgba(251, 170, 60, 0.8);
+    background: transparent;
+    border: none;
     color: #293C85;
-    font-size: 32px;
+    font-size: 60px;
     font-weight: bold;
     cursor: pointer;
-    z-index: 100;
+    z-index: 1000;
+    /* Extremely high to ensure visibility */
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .slideshow-arrow:hover {
-    background: rgba(251, 170, 60, 1);
-    color: white;
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 20px rgba(251, 170, 60, 0.4);
+    color: #fbaa3c;
+    transform: translateY(-50%) scale(1.2);
+    text-shadow: 0 3px 6px rgba(251, 170, 60, 0.3);
 }
 
 .slideshow-arrow:active {
-    transform: translateY(-50%) scale(0.95);
+    transform: translateY(-50%) scale(1);
 }
 
 .slideshow-arrow-left {
-    left: -80px;
+    left: -100px;
+    /* Pushed significantly away from the images */
 }
 
 .slideshow-arrow-right {
-    right: -80px;
+    right: -100px;
+    /* Pushed significantly away from the images */
 }
 
 /* Responsive arrow buttons */
 @media screen and (max-width: 768px) {
     .slideshow-arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
+        font-size: 40px;
     }
 
     .slideshow-arrow-left {

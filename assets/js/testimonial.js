@@ -65,14 +65,14 @@ class InfiniteScrollMoments {
     // Create left arrow
     const leftArrow = document.createElement('button');
     leftArrow.className = 'slideshow-arrow slideshow-arrow-left';
-    leftArrow.innerHTML = '‹';
+    leftArrow.innerHTML = '&lt;';
     leftArrow.setAttribute('aria-label', 'Previous');
     leftArrow.addEventListener('click', () => this.handleLeftArrow());
 
     // Create right arrow
     const rightArrow = document.createElement('button');
     rightArrow.className = 'slideshow-arrow slideshow-arrow-right';
-    rightArrow.innerHTML = '›';
+    rightArrow.innerHTML = '&gt;';
     rightArrow.setAttribute('aria-label', 'Next');
     rightArrow.addEventListener('click', () => this.handleRightArrow());
 
