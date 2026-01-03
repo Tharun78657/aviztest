@@ -48,6 +48,7 @@ class InfiniteScrollMoments {
     this.wrapper = document.querySelector(".testimonials-wrapper");
     this.scrollTrack = null;
     this.players = [];
+    this.currentlyPlayingPlayer = null;
     this.init();
   }
 
@@ -78,25 +79,103 @@ class InfiniteScrollMoments {
     videoIframes.forEach((iframe) => {
       const player = new YT.Player(iframe, {
         events: {
-          'onStateChange': (event) => this.onPlayerStateChange(event)
+          'onStateChange': (event) => this.onPlayerStateChange(event, player),
+          'onReady': (event) => this.onPlayerReady(event, player)
         }
       });
       this.players.push(player);
     });
+
+    // Start monitoring scroll position to stop videos when out of view
+    this.startScrollMonitoring();
   }
 
-  onPlayerStateChange(event) {
+  onPlayerReady(event, player) {
+    // Ensure video doesn't autoplay
+    player.pauseVideo();
+  }
+
+  onPlayerStateChange(event, player) {
     // YT.PlayerState.PLAYING = 1
     // YT.PlayerState.PAUSED = 2
     // YT.PlayerState.ENDED = 0
 
     if (event.data === YT.PlayerState.PLAYING) {
+      // Stop all other videos when one starts playing
+      this.stopAllVideosExcept(player);
+      this.currentlyPlayingPlayer = player;
       // Video is playing - pause the slideshow
       this.pauseSlideshow();
     } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
       // Video paused or ended - resume the slideshow
+      if (this.currentlyPlayingPlayer === player) {
+        this.currentlyPlayingPlayer = null;
+      }
       this.resumeSlideshow();
     }
+  }
+
+  stopAllVideosExcept(exceptPlayer) {
+    this.players.forEach(player => {
+      if (player !== exceptPlayer) {
+        try {
+          player.pauseVideo();
+        } catch (e) {
+          // Ignore errors for players not yet ready
+        }
+      }
+    });
+  }
+
+  stopAllVideos() {
+    this.players.forEach(player => {
+      try {
+        player.pauseVideo();
+      } catch (e) {
+        // Ignore errors for players not yet ready
+      }
+    });
+    this.currentlyPlayingPlayer = null;
+    this.resumeSlideshow();
+  }
+
+  startScrollMonitoring() {
+    // Check every 500ms if videos have scrolled out of view
+    setInterval(() => {
+      this.checkVideoVisibility();
+    }, 500);
+  }
+
+  checkVideoVisibility() {
+    if (!this.currentlyPlayingPlayer) return;
+
+    const videoIframes = document.querySelectorAll('.moment-video iframe');
+    const containerRect = this.wrapper.getBoundingClientRect();
+
+    videoIframes.forEach((iframe, index) => {
+      const iframeRect = iframe.getBoundingClientRect();
+      const player = this.players[index];
+
+      // Check if this is the currently playing player
+      if (player === this.currentlyPlayingPlayer) {
+        // Check if iframe is mostly out of view
+        const isVisible = (
+          iframeRect.right > containerRect.left + 50 &&
+          iframeRect.left < containerRect.right - 50
+        );
+
+        if (!isVisible) {
+          // Video has scrolled out of view, stop it
+          try {
+            player.pauseVideo();
+            this.currentlyPlayingPlayer = null;
+            this.resumeSlideshow();
+          } catch (e) {
+            // Ignore errors
+          }
+        }
+      }
+    });
   }
 
   pauseSlideshow() {
@@ -106,7 +185,7 @@ class InfiniteScrollMoments {
   }
 
   resumeSlideshow() {
-    if (this.scrollTrack) {
+    if (this.scrollTrack && !this.currentlyPlayingPlayer) {
       this.scrollTrack.style.animationPlayState = 'running';
     }
   }
@@ -136,7 +215,10 @@ class InfiniteScrollMoments {
     });
 
     this.scrollTrack.addEventListener('mouseleave', () => {
-      this.scrollTrack.style.animationPlayState = 'running';
+      // Only resume if no video is playing
+      if (!this.currentlyPlayingPlayer) {
+        this.scrollTrack.style.animationPlayState = 'running';
+      }
     });
   }
 
@@ -153,7 +235,7 @@ class InfiniteScrollMoments {
             src="${moment.videoUrl}" 
             title="${moment.caption}"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
             loading="lazy"
