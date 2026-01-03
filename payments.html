@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Information &ndash; Aviz Academy</title>
+  <!-- Google Fonts for modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    This page provides payment instructions for students interested in registering
+    for a course at Aviz Academy. It includes options for UPI/PhonePe as well as
+    traditional bank transfers via NEFT/IMPS. A QR code image is embedded to
+    facilitate quick payments using any UPI‑enabled app. The styles are kept
+    simple and responsive for clarity on both mobile and desktop screens.
+  -->
+  <style>
+    /* Reset some defaults for consistency across browsers */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f7f9fc;
+      color: #333;
+    }
+
+    header {
+      /* Gradient for depth */
+      background: linear-gradient(90deg, #0b2c63 60%, #1e3c72 100%);
+      color: #ffffff;
+      padding: 32px 20px 24px 20px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(11,44,99,0.08);
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 28px auto;
+      background-color: #fff;
+      padding: 28px 22px;
+      border-radius: 16px;
+      box-shadow: 0 6px 24px rgba(11,44,99,0.10);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .container:hover {
+      box-shadow: 0 12px 32px rgba(11,44,99,0.16);
+      transform: translateY(-2px) scale(1.012);
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    h2 {
+      /* Secondary accent color inspired by Aviz Academy's orange highlights */
+      color: #f7931e;
+      margin-bottom: 10px;
+    }
+
+    .section {
+      margin-bottom: 24px;
+    }
+
+    .details {
+      list-style: none;
+      padding-left: 0;
+      background: #f3f6fa;
+      border-radius: 10px;
+      padding: 16px 14px 10px 14px;
+      margin-bottom: 0;
+      box-shadow: 0 1px 4px rgba(11,44,99,0.04);
+    }
+    .details li {
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e6eaf1;
+      font-size: 1.04em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .copy-btn {
+      background: #f3f6fa;
+      border: 1px solid #e6eaf1;
+      color: #0b2c63;
+      border-radius: 6px;
+      padding: 2px 10px;
+      margin-left: 8px;
+      font-size: 0.95em;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      outline: none;
+    }
+    .copy-btn:hover, .copy-btn.copied {
+      background: #f7931e;
+      color: #fff;
+      border-color: #f7931e;
+    }
+    .details li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .details li strong {
+      min-width: 140px;
+      font-weight: 600;
+      color: #0b2c63;
+      letter-spacing: 0.01em;
+      font-size: 1.05em;
+    }
+
+    .qr-image {
+      display: block;
+      margin: 22px auto 10px;
+      max-width: 260px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(11,44,99,0.10);
+      border: 2px solid #e6eaf1;
+    }
+
+    a {
+      color: #f7931e;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-weight: 500;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #0b2c63;
+    }
+
+    /* Responsive improvements */
+    @media (max-width: 600px) {
+      .container {
+        padding: 14px 4vw;
+        border-radius: 8px;
+      }
+      header {
+        padding: 18px 8px 14px 8px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      h2 {
+        font-size: 1.1em;
+      }
+      .details li strong {
+        min-width: 90px;
+        font-size: 1em;
+      }
+      .qr-image {
+        max-width: 180px;
+        border-radius: 8px;
+      }
+    }
+  </style>
+  <script>
+    function copyToClipboard(value, btn) {
+      navigator.clipboard.writeText(value).then(() => {
+        btn.classList.add('copied');
+        btn.textContent = 'Copied!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.textContent = 'Copy';
+        }, 1200);
+      });
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Payment Information</h1>
+  </header>
+  <div class="container">
+    <section class="section">
+      <p>Hi,</p>
+      <p>Thanks for showing interest in registering for our course. Please refer to the payment information below and complete the payment at your earliest convenience to confirm your seat.</p>
+    </section>
+    <!-- Note: Share screenshot for LMS access -->
+    <section class="section" style="background: #fffbe6; border-left: 4px solid #f7931e; margin-bottom: 12px; padding: 14px 18px;">
+      <p style="margin:0;">After payment, <strong>make sure to share the screenshot with us over WhatsApp</strong> to get LMS access.</p>
+    </section>
+    <!-- Note: Contact for credit card payment -->
+    <section class="section" style="background: #e6f7ff; border-left: 4px solid #0b2c63; margin-bottom: 18px; padding: 14px 18px;">
+      <p style="margin:0;">Due to payment gateway high charges we are not accepting credit card payments, Use 3rd party websites i.e; phonepe, paytm or nobroker wesites and use educational fee payment option</p>
+    </section>
+    <section class="section">
+      <h2>UPI / PhonePe</h2>
+      <ul class="details">
+        <li><strong>Name:</strong> <span>Aviz Academy</span> <button class="copy-btn" onclick="copyToClipboard('Aviz Academy', this)">Copy</button></li>
+        <li><strong>UPI ID:</strong> <span>AVIZACADEMY@aubank</span> <button class="copy-btn" onclick="copyToClipboard('AVIZACADEMY@aubank', this)">Copy</button></li>
+        <li><strong>PhonePe Number:</strong> <span>799-7777-597</span> <button class="copy-btn" onclick="copyToClipboard('799-7777-597', this)">Copy</button></li>
+      </ul>
+      <!-- The following image displays the UPI QR code for payments. -->
+      <img src="Payment.JPG" alt="Aviz Academy UPI QR Code" class="qr-image">
+      <p style="text-align:center; margin-top: 0;">Scan the QR code using your preferred UPI app to make your payment.</p>
+    </section>
+    <section class="section">
+      <h2>Bank Transfer (NEFT/IMPS)</h2>
+      <ul class="details">
+        <li><strong>Name:</strong> <span>AVIZ ACADEMY</span> <button class="copy-btn" onclick="copyToClipboard('AVIZ ACADEMY', this)">Copy</button></li>
+        <li><strong>Account Number:</strong> <span>2502264773038444</span> <button class="copy-btn" onclick="copyToClipboard('2502264773038444', this)">Copy</button></li>
+        <li><strong>IFSC:</strong> <span>AUBL0002647</span> <button class="copy-btn" onclick="copyToClipboard('AUBL0002647', this)">Copy</button></li>
+        <li><strong>SWIFT Code:</strong> <span>AUBLINBBXXX</span> <button class="copy-btn" onclick="copyToClipboard('AUBLINBBXXX', this)">Copy</button></li>
+        <li><strong>Bank Name:</strong> <span>AU Small Finance Bank</span> <button class="copy-btn" onclick="copyToClipboard('AU Small Finance Bank', this)">Copy</button></li>
+        <li><strong>Branch:</strong> <span>Vivekananda Nagar Kukatpally, Hyderabad</span> <button class="copy-btn" onclick="copyToClipboard('Vivekananda Nagar Kukatpally, Hyderabad', this)">Copy</button></li>
+      </ul>
+    </section>
+    <section class="section">
+      <p>If you have any questions or need assistance, please contact us at <a href="mailto:avizway@gmail.com">avizway@gmail.com</a>.</p>
+    </section>
+  </div>
+</body>
+</html>
