@@ -1383,6 +1383,56 @@ span.enroll_btn {
     border-radius: 16px;
 }
 
+/* Arrow Navigation Buttons */
+.slideshow-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(251, 170, 60, 0.8);
+    color: #293C85;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.slideshow-arrow:hover {
+    background: rgba(251, 170, 60, 1);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(251, 170, 60, 0.4);
+}
+
+.slideshow-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.slideshow-arrow-left {
+    left: 10px;
+}
+
+.slideshow-arrow-right {
+    right: 10px;
+}
+
+/* Responsive arrow buttons */
+@media screen and (max-width: 768px) {
+    .slideshow-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+}
+
 .dots {
     display: none;
 }

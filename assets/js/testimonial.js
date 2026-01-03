@@ -49,12 +49,64 @@ class InfiniteScrollMoments {
     this.scrollTrack = null;
     this.players = [];
     this.currentlyPlayingPlayer = null;
+    this.isSlideshowPaused = false;
     this.init();
   }
 
   init() {
     this.createInfiniteScroll();
+    this.addArrowButtons();
     this.loadYouTubeAPI();
+  }
+
+  addArrowButtons() {
+    const container = this.wrapper.parentElement;
+
+    // Create left arrow
+    const leftArrow = document.createElement('button');
+    leftArrow.className = 'slideshow-arrow slideshow-arrow-left';
+    leftArrow.innerHTML = '‹';
+    leftArrow.setAttribute('aria-label', 'Previous');
+    leftArrow.addEventListener('click', () => this.handleLeftArrow());
+
+    // Create right arrow
+    const rightArrow = document.createElement('button');
+    rightArrow.className = 'slideshow-arrow slideshow-arrow-right';
+    rightArrow.innerHTML = '›';
+    rightArrow.setAttribute('aria-label', 'Next');
+    rightArrow.addEventListener('click', () => this.handleRightArrow());
+
+    container.appendChild(leftArrow);
+    container.appendChild(rightArrow);
+
+    this.leftArrow = leftArrow;
+    this.rightArrow = rightArrow;
+  }
+
+  handleLeftArrow() {
+    // Scroll left by one card width
+    const cardWidth = 420; // 400px card + 20px gap
+    if (this.scrollTrack) {
+      const currentTransform = this.scrollTrack.style.transform || 'translateX(0px)';
+      const currentX = parseFloat(currentTransform.match(/-?\d+\.?\d*/)?.[0] || 0);
+      this.scrollTrack.style.transform = `translateX(${currentX + cardWidth}px)`;
+    }
+  }
+
+  handleRightArrow() {
+    // Resume the slideshow if it's paused
+    if (this.isSlideshowPaused) {
+      this.resumeSlideshow();
+      this.isSlideshowPaused = false;
+    }
+
+    // Scroll right by one card width
+    const cardWidth = 420; // 400px card + 20px gap
+    if (this.scrollTrack) {
+      const currentTransform = this.scrollTrack.style.transform || 'translateX(0px)';
+      const currentX = parseFloat(currentTransform.match(/-?\d+\.?\d*/)?.[0] || 0);
+      this.scrollTrack.style.transform = `translateX(${currentX - cardWidth}px)`;
+    }
   }
 
   loadYouTubeAPI() {
@@ -106,12 +158,15 @@ class InfiniteScrollMoments {
       this.currentlyPlayingPlayer = player;
       // Video is playing - pause the slideshow
       this.pauseSlideshow();
+      this.isSlideshowPaused = true;
     } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-      // Video paused or ended - resume the slideshow
+      // Video paused or ended - STOP the slideshow (don't auto-resume)
       if (this.currentlyPlayingPlayer === player) {
         this.currentlyPlayingPlayer = null;
       }
-      this.resumeSlideshow();
+      // Keep slideshow paused when video stops
+      this.pauseSlideshow();
+      this.isSlideshowPaused = true;
     }
   }
 
@@ -136,7 +191,8 @@ class InfiniteScrollMoments {
       }
     });
     this.currentlyPlayingPlayer = null;
-    this.resumeSlideshow();
+    this.pauseSlideshow();
+    this.isSlideshowPaused = true;
   }
 
   startScrollMonitoring() {
@@ -169,7 +225,8 @@ class InfiniteScrollMoments {
           try {
             player.pauseVideo();
             this.currentlyPlayingPlayer = null;
-            this.resumeSlideshow();
+            this.pauseSlideshow();
+            this.isSlideshowPaused = true;
           } catch (e) {
             // Ignore errors
           }
@@ -185,7 +242,7 @@ class InfiniteScrollMoments {
   }
 
   resumeSlideshow() {
-    if (this.scrollTrack && !this.currentlyPlayingPlayer) {
+    if (this.scrollTrack) {
       this.scrollTrack.style.animationPlayState = 'running';
     }
   }
@@ -215,8 +272,8 @@ class InfiniteScrollMoments {
     });
 
     this.scrollTrack.addEventListener('mouseleave', () => {
-      // Only resume if no video is playing
-      if (!this.currentlyPlayingPlayer) {
+      // Only resume if not manually paused
+      if (!this.isSlideshowPaused && !this.currentlyPlayingPlayer) {
         this.scrollTrack.style.animationPlayState = 'running';
       }
     });
