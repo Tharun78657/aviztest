@@ -1297,15 +1297,16 @@ span.enroll_btn {
 .testimonials-wrapper {
     position: relative;
     width: 100%;
-    height: 340px;
-    display: flex;
-    align-items: center;
+    height: 350px;
+    /* Adjusted to fit 300px squares plus shadow */
+    display: block;
     overflow: hidden;
 }
 
 /* Infinite Scroll Track */
 .scroll-track {
     display: flex;
+    width: max-content;
     gap: 20px;
     animation: infiniteScroll 30s linear infinite;
     will-change: transform;
@@ -1325,8 +1326,10 @@ span.enroll_btn {
 /* Individual Moment Cards */
 .moment-card {
     flex-shrink: 0;
-    width: 400px;
-    height: 280px;
+    width: 300px;
+    /* Small square width */
+    height: 300px;
+    /* Small square height */
     position: relative;
     transition: transform 0.3s ease;
 }
@@ -1429,16 +1432,22 @@ span.enroll_btn {
 
 /* Responsive arrow buttons */
 @media screen and (max-width: 768px) {
+    .moment-card {
+        width: 160px;
+        /* Significantly smaller for mobile */
+        height: 160px;
+    }
+
     .slideshow-arrow {
         font-size: 40px;
     }
 
     .slideshow-arrow-left {
-        left: 5px;
+        left: -30px;
     }
 
     .slideshow-arrow-right {
-        right: 5px;
+        right: -30px;
     }
 }
 

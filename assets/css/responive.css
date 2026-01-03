@@ -715,31 +715,56 @@ html {
 
   .testimonalslist_mainContainer {
     max-width: 90vw;
-    min-height: 340px;
+    min-height: 250px;
     padding: 1rem;
   }
 
   .testimonials-wrapper {
-    height: 280px;
+    display: block !important;
+    height: 180px !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-track {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    gap: 15px !important;
+  }
+
+  .moment-card {
+    width: 160px !important;
+    height: 160px !important;
+    flex: 0 0 160px !important;
+    margin: 0 !important;
+    position: relative;
   }
 
   .moment-image {
-    width: 360px;
-    height: 250px;
+    width: 100% !important;
+    height: 100% !important;
   }
 
-  .testimonial.active {
-    transform: scale(1.1);
+  .slideshow-arrow {
+    font-size: 30px !important;
+    text-shadow: 0 0 5px white;
+    /* Make arrows readable over images */
   }
 
-  .moment-image {
-    width: 350px;
-    height: 260px;
+  .slideshow-arrow-left {
+    left: 10px !important;
+    z-index: 1001;
+  }
+
+  .slideshow-arrow-right {
+    right: 10px !important;
+    z-index: 1001;
   }
 
   .moment-caption {
-    max-width: 330px;
-    font-size: 0.9rem;
+    display: none !important;
   }
 }
 
@@ -786,12 +811,13 @@ html {
   }
 
   .testimonials-wrapper {
-    height: 260px;
+    display: block !important;
+    height: 180px !important;
   }
 
   .moment-image {
-    width: 300px;
-    height: 210px;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .avatar {
@@ -830,27 +856,19 @@ html {
 
   .testimonalslist_mainContainer {
     max-width: 95vw;
-    min-height: 300px;
+    min-height: 200px !important;
     padding: 0.8rem;
   }
 
   .testimonials-wrapper {
-    height: 260px;
+    display: block !important;
+    height: 180px !important;
+    padding: 0;
   }
 
   .moment-image {
-    width: 300px;
-    height: 210px;
-  }
-
-  .testimonials-wrapper {
-    height: 250px;
-    padding: 0 10px;
-  }
-
-  .moment-image {
-    width: 280px;
-    height: 196px;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .content {
@@ -886,14 +904,12 @@ html {
   }
 
   .moment-image {
-    width: 260px;
-    height: 195px;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .moment-caption {
-    max-width: 240px;
-    font-size: 0.75rem;
-    padding: 0.6rem;
+    display: none !important;
   }
 
   .avatar {

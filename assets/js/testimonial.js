@@ -91,7 +91,8 @@ class InfiniteScrollMoments {
     }
 
     // Scroll left by one card width
-    const cardWidth = 420; // 400px card + 20px gap
+    const firstCard = this.wrapper.querySelector('.moment-card');
+    const cardWidth = firstCard ? firstCard.offsetWidth + 20 : 320; // card + 20px gap
     if (this.scrollTrack) {
       const currentTransform = this.scrollTrack.style.transform || 'translateX(0px)';
       const currentX = parseFloat(currentTransform.match(/-?\d+\.?\d*/)?.[0] || 0);
@@ -107,7 +108,8 @@ class InfiniteScrollMoments {
     }
 
     // Scroll right by one card width
-    const cardWidth = 420; // 400px card + 20px gap
+    const firstCard = this.wrapper.querySelector('.moment-card');
+    const cardWidth = firstCard ? firstCard.offsetWidth + 20 : 320; // card + 20px gap
     if (this.scrollTrack) {
       const currentTransform = this.scrollTrack.style.transform || 'translateX(0px)';
       const currentX = parseFloat(currentTransform.match(/-?\d+\.?\d*/)?.[0] || 0);
