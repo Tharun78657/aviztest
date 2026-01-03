@@ -1,61 +1,39 @@
 const academyMoments = [
   {
     id: 1,
+    type: "video",
+    videoUrl: "https://www.youtube.com/embed/_r8ZVqh6AZ4?enablejsapi=1",
+    videoId: "video-anniversary",
+    caption: "🎉 Aviz Academy 1st Anniversary Celebration"
+  },
+  {
+    id: 2,
     image: "assets/images/ACS02536.JPG",
     caption: "Collaborative Learning – Students Engaging in Hands-on AWS Practice",
     type: "image"
   },
   {
-    id: 2,
-    type: "video",
-    videoUrl: "https://www.youtube.com/embed/_r8ZVqh6AZ4?enablejsapi=1",
-    videoId: "video-2",
-    caption: "Batch Alert - New Batch Starting Soon!"
-  },
-  {
     id: 3,
-    image: "assets/images/ACS02569.JPG",
-    caption: "Interactive Workshop – Mastering DevOps Tools Together",
-    type: "image"
+    type: "video",
+    videoUrl: "https://www.youtube.com/embed/QyoQGtOhpgo?enablejsapi=1",
+    videoId: "video-newbatch",
+    caption: "📢 New Batch Starting Soon – Join the Cloud Journey!"
   },
   {
     id: 4,
-    image: "assets/images/ACS02611.JPG",
-    caption: "Focused Learning Environment – Building Cloud Solutions",
-    type: "image"
-  },
-  {
-    id: 5,
     image: "assets/images/ACS02658.JPG",
     caption: "Expert Guidance – Avinash Leading Technical Discussions",
     type: "image"
   },
   {
+    id: 5,
+    type: "video",
+    videoUrl: "https://www.youtube.com/embed/scmCUfcfv4A?enablejsapi=1",
+    videoId: "video-mlrit",
+    caption: "☁️ AWS Student Annual Community Day at MLRIT"
+  },
+  {
     id: 6,
-    image: "assets/images/ACS02792.JPG",
-    caption: "Team Collaboration – Working on Real-World Cloud Projects",
-    type: "image"
-  },
-  {
-    id: 7,
-    image: "assets/images/ACS02805.JPG",
-    caption: "Knowledge Sharing – Community Learning at Its Best",
-    type: "image"
-  },
-  {
-    id: 8,
-    image: "assets/images/ACS02816.JPG",
-    caption: "Practical Training – Hands-on AWS Lab Sessions",
-    type: "image"
-  },
-  {
-    id: 9,
-    image: "assets/images/ACS03024.JPG",
-    caption: "Success Stories – Students Achieving Their Cloud Career Goals",
-    type: "image"
-  },
-  {
-    id: 10,
     image: "assets/images/ACS03096.JPG",
     caption: "Aviz Academy Family – Growing Together in the Cloud Journey",
     type: "image"
