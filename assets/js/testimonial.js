@@ -8,7 +8,8 @@ const academyMoments = [
   {
     id: 2,
     type: "video",
-    videoUrl: "https://www.youtube.com/embed/_r8ZVqh6AZ4",
+    videoUrl: "https://www.youtube.com/embed/_r8ZVqh6AZ4?enablejsapi=1",
+    videoId: "video-2",
     caption: "Batch Alert - New Batch Starting Soon!"
   },
   {
@@ -65,39 +66,97 @@ class InfiniteScrollMoments {
   constructor(moments) {
     this.moments = moments;
     this.wrapper = document.querySelector(".testimonials-wrapper");
+    this.scrollTrack = null;
+    this.players = [];
     this.init();
   }
 
   init() {
     this.createInfiniteScroll();
+    this.loadYouTubeAPI();
+  }
+
+  loadYouTubeAPI() {
+    // Load YouTube IFrame API
+    if (!window.YT) {
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      window.onYouTubeIframeAPIReady = () => {
+        this.initializePlayers();
+      };
+    } else {
+      this.initializePlayers();
+    }
+  }
+
+  initializePlayers() {
+    const videoIframes = document.querySelectorAll('.moment-video iframe');
+
+    videoIframes.forEach((iframe) => {
+      const player = new YT.Player(iframe, {
+        events: {
+          'onStateChange': (event) => this.onPlayerStateChange(event)
+        }
+      });
+      this.players.push(player);
+    });
+  }
+
+  onPlayerStateChange(event) {
+    // YT.PlayerState.PLAYING = 1
+    // YT.PlayerState.PAUSED = 2
+    // YT.PlayerState.ENDED = 0
+
+    if (event.data === YT.PlayerState.PLAYING) {
+      // Video is playing - pause the slideshow
+      this.pauseSlideshow();
+    } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+      // Video paused or ended - resume the slideshow
+      this.resumeSlideshow();
+    }
+  }
+
+  pauseSlideshow() {
+    if (this.scrollTrack) {
+      this.scrollTrack.style.animationPlayState = 'paused';
+    }
+  }
+
+  resumeSlideshow() {
+    if (this.scrollTrack) {
+      this.scrollTrack.style.animationPlayState = 'running';
+    }
   }
 
   createInfiniteScroll() {
     // Create two sets of images for seamless looping
-    const scrollTrack = document.createElement("div");
-    scrollTrack.className = "scroll-track";
+    this.scrollTrack = document.createElement("div");
+    this.scrollTrack.className = "scroll-track";
 
     // First set of images
     this.moments.forEach((moment) => {
       const momentCard = this.createMomentCard(moment);
-      scrollTrack.appendChild(momentCard);
+      this.scrollTrack.appendChild(momentCard);
     });
 
     // Duplicate set for seamless loop
     this.moments.forEach((moment) => {
       const momentCard = this.createMomentCard(moment);
-      scrollTrack.appendChild(momentCard);
+      this.scrollTrack.appendChild(momentCard);
     });
 
-    this.wrapper.appendChild(scrollTrack);
+    this.wrapper.appendChild(this.scrollTrack);
 
     // Add pause on hover functionality
-    scrollTrack.addEventListener('mouseenter', () => {
-      scrollTrack.style.animationPlayState = 'paused';
+    this.scrollTrack.addEventListener('mouseenter', () => {
+      this.scrollTrack.style.animationPlayState = 'paused';
     });
 
-    scrollTrack.addEventListener('mouseleave', () => {
-      scrollTrack.style.animationPlayState = 'running';
+    this.scrollTrack.addEventListener('mouseleave', () => {
+      this.scrollTrack.style.animationPlayState = 'running';
     });
   }
 
@@ -106,9 +165,11 @@ class InfiniteScrollMoments {
     card.className = "moment-card";
 
     if (moment.type === "video") {
+      const uniqueId = `${moment.videoId}-${Math.random().toString(36).substr(2, 9)}`;
       card.innerHTML = `
         <div class="moment-image moment-video">
           <iframe 
+            id="${uniqueId}"
             src="${moment.videoUrl}" 
             title="${moment.caption}"
             frameborder="0"
