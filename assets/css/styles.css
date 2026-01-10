@@ -1387,6 +1387,25 @@ span.enroll_btn {
 .moment-video {
     background: #000;
     border-radius: 16px;
+    overflow: hidden;
+}
+
+/* Hide Instagram UI elements - only show video */
+.moment-video iframe {
+    pointer-events: auto;
+}
+
+/* Ensure Instagram embeds fill the container properly */
+.moment-video {
+    position: relative;
+}
+
+.moment-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* Arrow Navigation Buttons */

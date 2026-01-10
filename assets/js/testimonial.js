@@ -24,14 +24,14 @@ const academyMoments = [
   {
     id: 7,
     type: "video",
-    videoUrl: "https://www.instagram.com/reel/DTCkroYAcD_/embed",
+    videoUrl: "https://www.instagram.com/reel/DTCkroYAcD_/embed/captioned",
     videoId: "insta-reel-1",
     caption: "🚀 Hands-on Learning and Student Success"
   },
   {
     id: 8,
     type: "video",
-    videoUrl: "https://www.instagram.com/reel/DRkGykFEnyV/embed",
+    videoUrl: "https://www.instagram.com/reel/DRkGykFEnyV/embed/captioned",
     videoId: "insta-reel-2",
     caption: "✨ Amazing Moments from our AWS Community"
   },
