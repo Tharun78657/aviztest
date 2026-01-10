@@ -24,30 +24,30 @@ const academyMoments = [
   {
     id: 7,
     type: "video",
-    videoUrl: "https://www.instagram.com/reel/DTCkroYAcD_/embed/captioned",
-    videoId: "insta-reel-1",
+    videoUrl: "https://www.youtube.com/embed/gomV4wxWFI0?enablejsapi=1",
+    videoId: "video-student-1",
     caption: "🚀 Hands-on Learning and Student Success"
   },
   {
     id: 8,
     type: "video",
-    videoUrl: "https://www.instagram.com/reel/DRkGykFEnyV/embed/captioned",
-    videoId: "insta-reel-2",
+    videoUrl: "https://www.youtube.com/embed/16Sqtxbz2-c?enablejsapi=1",
+    videoId: "video-student-2",
     caption: "✨ Amazing Moments from our AWS Community"
   },
   // All Images Second
-  // {
-  //   id: 4,
-  //   image: "assets/images/ACS02536.JPG",
-  //   caption: "Collaborative Learning – Students Engaging in Hands-on AWS Practice",
-  //   type: "image"
-  // },
-  // {
-  //   id: 5,
-  //   image: "assets/images/ACS02658.JPG",
-  //   caption: "Expert Guidance – Avinash Leading Technical Discussions",
-  //   type: "image"
-  // },
+  {
+    id: 4,
+    image: "assets/images/ACS02536.JPG",
+    caption: "Collaborative Learning – Students Engaging in Hands-on AWS Practice",
+    type: "image"
+  },
+  {
+    id: 5,
+    image: "assets/images/ACS02658.JPG",
+    caption: "Expert Guidance – Avinash Leading Technical Discussions",
+    type: "image"
+  },
   {
     id: 6,
     image: "assets/images/ACS03096.JPG",
