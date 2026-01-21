@@ -8,7 +8,8 @@ const classVideos = [
     infoContainer:
       "Welcome to the AWS with Avinash Reddy Course! In this introductory session, we will explore the course structure, objectives, and what you can expect to learn. Get ready to embark on your cloud journey!",
     iframeSource:
-      "https://www.youtube.com/embed/mvF3pnVbth8?si=k6YJQsmOa9V3QgZr",
+      "https://www.youtube.com/embed/SbBYuto82qE?si=EOyA110ohmi9dmFl",
+
     register:
       "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
   },
@@ -19,76 +20,76 @@ const classVideos = [
     SecondHeader: "DevOps and AWS",
     infoContainer: "Understanding DevOps and AWS importance in Real World",
     iframeSource:
-      "https://www.youtube.com/embed/8RItULKpoV4?si=Ad0XWjtfLhfVYyfP",
+      "https://www.youtube.com/embed/MMMPZ_zr1vg?si=wMg2-62qdQx29fzU",
 
     register:
       "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
   },
-  {
-    _id: 3,
-    day: "Day 2 Demo",
-    ClassHeader: "aws class",
-    SecondHeader: "AWS Global Infrastructure & Account creation",
-    infoContainer:
-      "A quick intro to AWS and its core services, followed by an overview of its global infrastructure — including Regions, Availability Zones, and Edge Locations — to understand how AWS delivers secure, scalable, and reliable cloud solutions worldwide.",
-    iframeSource:
-      "https://www.youtube.com/embed/juLVcacZVrU?si=yxr7txdS8NNgqTCT",
-    thubnailImg: "assets/images/day2.jpg",
-    register:
-      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  },
-  {
-    _id: 4,
-    day: "Day 3 Demo",
-    ClassHeader: "aws class",
-    SecondHeader: "Create your first IAM user, Activate MFA on Root Account",
-    infoContainer:
-      "Learn how to create your first IAM user, activate MFA on your root account, and understand the importance of security best practices in AWS.",
-    iframeSource:
-      "https://www.youtube.com/embed/mow4xVwPSAE?si=r8Rxxwxl1IlELuHm",
-    thubnailImg: "assets/images/day3.jpg",
-    register:
-      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  },
-  {
-    _id: 5,
-    day: "Day 4 Demo",
-    ClassHeader: "aws class",
-    SecondHeader: "Understanding IAM Policies for permissions management",
-    infoContainer:
-      "Dive into AWS Identity and Access Management (IAM) policies to learn how to manage permissions effectively, ensuring secure access control for your AWS resources.",
-    iframeSource:
-      "https://www.youtube.com/embed/zpNsTDzuYbc?si=XDa2_R9wqP2BtIDR",
-    thubnailImg: "assets/images/day4.jpg",
-    register:
-      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  },
-  {
-    _id: 6,
-    day: "Day 5 Demo",
-    ClassHeader: "aws class",
-    SecondHeader: "CloudTrail, Inline Policy, Credentials report",
-    infoContainer:
-      "Explore AWS CloudTrail for monitoring account activity, learn about inline policies for fine-grained permissions, and understand how to generate credentials reports to maintain security and compliance.",
-    iframeSource:
-      "https://www.youtube.com/embed/8yN2hKa0dSo?si=kt6z8CJxYHJzr5It",
-    thubnailImg: "assets/images/day4.jpg",
-    register:
-      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  },
-  {
-    _id: 7,
-    day: "Day 6 Demo",
-    ClassHeader: "aws class",
-    SecondHeader: "Launch your First EC2 Instance",
-    infoContainer:
-      "Learn how to launch your first EC2 instance, configure security groups, and understand the basics of managing virtual servers in the cloud.",
-    iframeSource:
-      "https://www.youtube.com/embed/1Q9vpce9me4?si=LanyIeh_8UQD8Jx-",
-    thubnailImg: "assets/images/day4.jpg",
-    register:
-      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  },
+  // {
+  //   _id: 3,
+  //   day: "Day 2 Demo",
+  //   ClassHeader: "aws class",
+  //   SecondHeader: "AWS Global Infrastructure & Account creation",
+  //   infoContainer:
+  //     "A quick intro to AWS and its core services, followed by an overview of its global infrastructure — including Regions, Availability Zones, and Edge Locations — to understand how AWS delivers secure, scalable, and reliable cloud solutions worldwide.",
+  //   iframeSource:
+  //     "https://www.youtube.com/embed/juLVcacZVrU?si=yxr7txdS8NNgqTCT",
+  //   thubnailImg: "assets/images/day2.jpg",
+  //   register:
+  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  // },
+  // {
+  //   _id: 4,
+  //   day: "Day 3 Demo",
+  //   ClassHeader: "aws class",
+  //   SecondHeader: "Create your first IAM user, Activate MFA on Root Account",
+  //   infoContainer:
+  //     "Learn how to create your first IAM user, activate MFA on your root account, and understand the importance of security best practices in AWS.",
+  //   iframeSource:
+  //     "https://www.youtube.com/embed/mow4xVwPSAE?si=r8Rxxwxl1IlELuHm",
+  //   thubnailImg: "assets/images/day3.jpg",
+  //   register:
+  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  // },
+  // {
+  //   _id: 5,
+  //   day: "Day 4 Demo",
+  //   ClassHeader: "aws class",
+  //   SecondHeader: "Understanding IAM Policies for permissions management",
+  //   infoContainer:
+  //     "Dive into AWS Identity and Access Management (IAM) policies to learn how to manage permissions effectively, ensuring secure access control for your AWS resources.",
+  //   iframeSource:
+  //     "https://www.youtube.com/embed/zpNsTDzuYbc?si=XDa2_R9wqP2BtIDR",
+  //   thubnailImg: "assets/images/day4.jpg",
+  //   register:
+  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  // },
+  // {
+  //   _id: 6,
+  //   day: "Day 5 Demo",
+  //   ClassHeader: "aws class",
+  //   SecondHeader: "CloudTrail, Inline Policy, Credentials report",
+  //   infoContainer:
+  //     "Explore AWS CloudTrail for monitoring account activity, learn about inline policies for fine-grained permissions, and understand how to generate credentials reports to maintain security and compliance.",
+  //   iframeSource:
+  //     "https://www.youtube.com/embed/8yN2hKa0dSo?si=kt6z8CJxYHJzr5It",
+  //   thubnailImg: "assets/images/day4.jpg",
+  //   register:
+  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  // },
+  // {
+  //   _id: 7,
+  //   day: "Day 6 Demo",
+  //   ClassHeader: "aws class",
+  //   SecondHeader: "Launch your First EC2 Instance",
+  //   infoContainer:
+  //     "Learn how to launch your first EC2 instance, configure security groups, and understand the basics of managing virtual servers in the cloud.",
+  //   iframeSource:
+  //     "https://www.youtube.com/embed/1Q9vpce9me4?si=LanyIeh_8UQD8Jx-",
+  //   thubnailImg: "assets/images/day4.jpg",
+  //   register:
+  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  // },
 ];
 
 function createDaysessions(dayVideos) {
