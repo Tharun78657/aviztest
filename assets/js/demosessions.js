@@ -3,10 +3,10 @@ const classVideos = [
     _id: 1,
     day: "Day 0 Demo",
     ClassHeader: "aws class",
-    SecondHeader: "Introduction to Course",
+    SecondHeader: "Introduction to AWS and DevSecOps Program",
     thumbnailImg: "assets/images/Day0.jpg",
     infoContainer:
-      "Welcome to the AWS with Avinash Reddy Course! In this introductory session, we will explore the course structure, objectives, and what you can expect to learn. Get ready to embark on your cloud journey!",
+      "Welcome to the AWS & DevSecOps Program with Avinash Reddy! In this demo session, you'll get a complete overview of the course roadmap, learning approach, tools you'll master, and real-world projects you'll work on. Discover how this program will prepare you for cloud, DevOps, and security roles and help you build industry-ready skills before we begin the full journey.",
     iframeSource:
       "https://www.youtube.com/embed/SbBYuto82qE?si=EOyA110ohmi9dmFl",
 
@@ -17,79 +17,92 @@ const classVideos = [
     _id: 2,
     day: "Day 1 Demo",
     ClassHeader: "aws class",
-    SecondHeader: "DevOps and AWS",
-    infoContainer: "Understanding DevOps and AWS importance in Real World",
+    SecondHeader: "What is DevOps & How DevOps and AWS is Interlinked",
+    infoContainer: "In this session, understand the fundamentals of DevOps and learn how it connects with AWS in real-world environments. Discover why DevOps and cloud skills are essential, how they work together in modern IT, and how this combination powers scalable, secure, and automated systems.",
     iframeSource:
       "https://www.youtube.com/embed/MMMPZ_zr1vg?si=wMg2-62qdQx29fzU",
 
     register:
       "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
   },
-  // {
-  //   _id: 3,
-  //   day: "Day 2 Demo",
-  //   ClassHeader: "aws class",
-  //   SecondHeader: "AWS Global Infrastructure & Account creation",
-  //   infoContainer:
-  //     "A quick intro to AWS and its core services, followed by an overview of its global infrastructure — including Regions, Availability Zones, and Edge Locations — to understand how AWS delivers secure, scalable, and reliable cloud solutions worldwide.",
-  //   iframeSource:
-  //     "https://www.youtube.com/embed/juLVcacZVrU?si=yxr7txdS8NNgqTCT",
-  //   thubnailImg: "assets/images/day2.jpg",
-  //   register:
-  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  // },
-  // {
-  //   _id: 4,
-  //   day: "Day 3 Demo",
-  //   ClassHeader: "aws class",
-  //   SecondHeader: "Create your first IAM user, Activate MFA on Root Account",
-  //   infoContainer:
-  //     "Learn how to create your first IAM user, activate MFA on your root account, and understand the importance of security best practices in AWS.",
-  //   iframeSource:
-  //     "https://www.youtube.com/embed/mow4xVwPSAE?si=r8Rxxwxl1IlELuHm",
-  //   thubnailImg: "assets/images/day3.jpg",
-  //   register:
-  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  // },
-  // {
-  //   _id: 5,
-  //   day: "Day 4 Demo",
-  //   ClassHeader: "aws class",
-  //   SecondHeader: "Understanding IAM Policies for permissions management",
-  //   infoContainer:
-  //     "Dive into AWS Identity and Access Management (IAM) policies to learn how to manage permissions effectively, ensuring secure access control for your AWS resources.",
-  //   iframeSource:
-  //     "https://www.youtube.com/embed/zpNsTDzuYbc?si=XDa2_R9wqP2BtIDR",
-  //   thubnailImg: "assets/images/day4.jpg",
-  //   register:
-  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  // },
-  // {
-  //   _id: 6,
-  //   day: "Day 5 Demo",
-  //   ClassHeader: "aws class",
-  //   SecondHeader: "CloudTrail, Inline Policy, Credentials report",
-  //   infoContainer:
-  //     "Explore AWS CloudTrail for monitoring account activity, learn about inline policies for fine-grained permissions, and understand how to generate credentials reports to maintain security and compliance.",
-  //   iframeSource:
-  //     "https://www.youtube.com/embed/8yN2hKa0dSo?si=kt6z8CJxYHJzr5It",
-  //   thubnailImg: "assets/images/day4.jpg",
-  //   register:
-  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  // },
-  // {
-  //   _id: 7,
-  //   day: "Day 6 Demo",
-  //   ClassHeader: "aws class",
-  //   SecondHeader: "Launch your First EC2 Instance",
-  //   infoContainer:
-  //     "Learn how to launch your first EC2 instance, configure security groups, and understand the basics of managing virtual servers in the cloud.",
-  //   iframeSource:
-  //     "https://www.youtube.com/embed/1Q9vpce9me4?si=LanyIeh_8UQD8Jx-",
-  //   thubnailImg: "assets/images/day4.jpg",
-  //   register:
-  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  // },
+  {
+    _id: 3,
+    day: "Day 2 Demo",
+    ClassHeader: "aws class",
+    SecondHeader: "AWS Account creation, MFA and Support Plans Overview",
+    infoContainer:
+      "Learn how to set up an AWS account, configure MFA for security, understand AWS Support Plans and best practices for managing access and cloud security from day one.",
+    iframeSource:
+      "https://www.youtube.com/embed/TtfgLH-ZNdg?si=iREdrjt-mfHRgNFh",
+    thubnailImg: "assets/images/day2.jpg",
+    register:
+      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  },
+  {
+    _id: 4,
+    day: "Day 3 Demo",
+    ClassHeader: "aws class",
+    SecondHeader: " AWS Global infrastructure & IAM User Creation",
+    infoContainer:
+      "In this session, explore AWS Regions & Availability Zones, learn how to create your first IAM user, enable MFA on your root account, and understand essential AWS security best practices to build a strong and secure cloud foundation.",
+    iframeSource:
+      "https://www.youtube.com/embed/wunX9DCq8Cg?si=3qvFU6BOCm-1CRl_",
+    thubnailImg: "assets/images/day3.jpg",
+    register:
+      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  },
+  {
+    _id: 5,
+    day: "Day 4 Demo",
+    ClassHeader: "aws class",
+    SecondHeader: "IAM Policies Deep Dive",
+    infoContainer:
+      "Dive into AWS Identity and Access Management (IAM) policies to learn how to manage permissions effectively, ensuring secure access control for your AWS resources.",
+    iframeSource:
+      "https://www.youtube.com/embed/0i_33np2TBc?si=bBt2GG_fq7JcxZZM",
+    thubnailImg: "assets/images/day4.jpg",
+    register:
+      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  },
+  {
+    _id: 6,
+    day: "Day 5 Demo",
+    ClassHeader: "aws class",
+    SecondHeader: "IAM Inline Policies, Permission Boundaries, cloudtrail & Policy conditions",
+    infoContainer:
+      "Deep dive into IAM Inline Policies, Permission Boundaries, and Policy Conditions to control access with precision. Learn how AWS CloudTrail tracks account activity and how credentials reports help ensure security, compliance, and visibility across your AWS environment.",
+    iframeSource:
+      "https://www.youtube.com/embed/gegrDy-vJiI?si=-ycf8ucNbi_Nutam",
+    thubnailImg: "assets/images/day4.jpg",
+    register:
+      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  },
+  {
+    _id: 7,
+    day: "Day 6 Demo",
+    ClassHeader: "aws class",
+    SecondHeader: "IAM warp up & EC2 introduction & Launching LINUX Instance",
+    infoContainer:
+      "Master the essentials of AWS security with a quick IAM recap, then step into compute services by understanding EC2 fundamentals and launching your first Linux instance. Perfect for beginners building strong cloud foundations!",
+    iframeSource:
+      "https://www.youtube.com/embed/GN6XdivxjCU?si=6448q2lM4yFKA9tq",
+    thubnailImg: "assets/images/day4.jpg",
+    register:
+      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  },
+  {
+    _id: 8,
+    day: "Day 7 Demo",
+    ClassHeader: "aws class",
+    SecondHeader: "EC2 Linux Connect methods and Intro to Security groups",
+    infoContainer:
+      "In this session, explore EC2 Linux connection methods step by step and understand how Security Groups work. Learn how to securely access your instances and manage network permissions with confidence.",
+    iframeSource:
+      "https://www.youtube.com/embed/pGlBs4o84A0?si=Y7c74NGauWgZYuhQ",
+    thubnailImg: "assets/images/day4.jpg",
+    register:
+      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  },
 ];
 
 function createDaysessions(dayVideos) {
