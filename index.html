@@ -32,7 +32,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -149,15 +149,11 @@
         }
 
         @media screen and (max-width: 600px) {
-
-            .banner-section img,
-            .sup_img img,
             .image img {
                 max-width: 100vw !important;
                 width: 100% !important;
                 height: auto !important;
                 display: block;
-
             }
         }
     </style>
@@ -323,7 +319,85 @@
             </a>
         </div>
         <div class="sup_img" data-aos="fade-up" data-aos-duration="1000">
-            <img src="assets/images/sup_imghero.png" width="400" height="350" alt="feature">
+            <div class="solar-system-container">
+                <!-- Orbit paths (half circles) -->
+                <!-- Orbit 1 - Inner orbit with 5 icons -->
+                <div class="orbit orbit-1">
+                    <div class="orbit-icon icon-1-1 networking-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048940.png" alt="Networking" width="28"
+                            height="28">
+                    </div>
+                    <div class="orbit-icon icon-1-2 linux-tux-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux Tux"
+                            width="28" height="28">
+                    </div>
+                    <div class="orbit-icon icon-1-3 git-icon">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v15.18.0/icons/git.svg" alt="Git" width="28"
+                            height="28">
+                    </div>
+                    <div class="orbit-icon icon-1-4 docker-icon">
+                        <img src="https://cdn.worldvectorlogo.com/logos/docker.svg" alt="Docker" width="28" height="28">
+                    </div>
+                    <div class="orbit-icon icon-1-5 github-orbit1-icon">
+                        <img src="https://cdn.worldvectorlogo.com/logos/github-icon-1.svg" alt="GitHub" width="28"
+                            height="28">
+                    </div>
+                </div>
+
+                <!-- Orbit 2 - Middle orbit with 5 icons -->
+                <div class="orbit orbit-2">
+                    <div class="orbit-icon icon-2-1 kubernetes-icon">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v15.18.0/icons/kubernetes.svg"
+                            alt="Kubernetes" width="28" height="28">
+                    </div>
+                    <div class="orbit-icon icon-2-2 argocd-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/argocd/argocd-original.svg"
+                            alt="ArgoCD" width="28" height="28">
+                    </div>
+                    <div class="orbit-icon icon-2-3 github-actions-icon">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v15.18.0/icons/githubactions.svg"
+                            alt="GitHub Actions" width="28" height="28">
+                    </div>
+                    <div class="orbit-icon icon-2-4 aws-orbit2-icon">
+                        <img src="https://cdn.worldvectorlogo.com/logos/aws-2.svg" alt="AWS" width="28" height="28">
+                    </div>
+                    <div class="orbit-icon icon-2-5 terraform-orbit2-icon">
+                        <img src="https://cdn.worldvectorlogo.com/logos/terraform-enterprise.svg" alt="Terraform"
+                            width="28" height="28">
+                    </div>
+                </div>
+
+                <!-- Orbit 3 - Outer orbit with 6 icons -->
+                <div class="orbit orbit-3">
+                    <div class="orbit-icon icon-3-1 ansible-icon">
+                        <img src="https://cdn.worldvectorlogo.com/logos/ansible.svg" alt="Ansible" width="28"
+                            height="28">
+                    </div>
+                    <div class="orbit-icon icon-3-2 prometheus-icon">
+                        <img src="https://cdn.worldvectorlogo.com/logos/prometheus.svg" alt="Prometheus" width="28"
+                            height="28">
+                    </div>
+                    <div class="orbit-icon icon-3-3 grafana-icon">
+                        <img src="https://cdn.worldvectorlogo.com/logos/grafana.svg" alt="Grafana" width="28"
+                            height="28">
+                    </div>
+                    <div class="orbit-icon icon-3-4 ai-icon">
+                        <img src="https://cdn.worldvectorlogo.com/logos/openai-2.svg" alt="AI" width="28" height="28">
+                    </div>
+                    <div class="orbit-icon icon-3-5 linux-foundation-icon">
+                        <img src="https://cdn.worldvectorlogo.com/logos/linux-foundation-1.svg" alt="Linux Foundation"
+                            width="28" height="28">
+                    </div>
+                    <div class="orbit-icon icon-3-6 hashicorp-icon">
+                        <img src="https://cdn.worldvectorlogo.com/logos/hashicorp.svg" alt="HashiCorp" width="28"
+                            height="28">
+                    </div>
+                </div>
+
+                <!-- Central image -->
+                <img src="assets/images/CloudOps-certification.png" width="260" height="423" alt="feature"
+                    class="certification-image">
+            </div>
         </div>
     </div>
     <div>
