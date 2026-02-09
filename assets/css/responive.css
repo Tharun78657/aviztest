@@ -1353,7 +1353,7 @@ html {
 
 
 /* Solar System Responsiveness for Larger Taller Screens (1024px to 1440px) */
-@media screen and (min-width: 1024px) and (max-width: 1440px) {
+@media screen and (min-width: 1024px) and (max-width: 2560px) {
   .banner-section {
     padding-bottom: 0 !important;
     align-items: flex-end !important;
