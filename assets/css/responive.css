@@ -1351,6 +1351,45 @@ html {
   }
 }
 
+
+/* Solar System Responsiveness for Larger Taller Screens (1024px to 1440px) */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .banner-section {
+    padding-bottom: 0 !important;
+    align-items: flex-end !important;
+    overflow: hidden !important;
+    display: flex !important;
+  }
+
+  .course_infoSection {
+    margin-bottom: 6rem !important;
+    z-index: 2;
+  }
+
+  .sup_img {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    align-self: flex-end !important;
+    flex: 0 0 auto !important;
+    /* Scale proportionally to maintain 'exactly look like which is present' */
+    transform: scale(0.9);
+    transform-origin: bottom center;
+    transition: transform 0.3s ease;
+  }
+
+  /* Specific adjustment for narrower screens in this range to prevent text overlap */
+  @media (max-width: 1150px) {
+    .sup_img {
+      transform: scale(0.75);
+    }
+
+    .course_infoSection {
+      margin-bottom: 4rem !important;
+    }
+  }
+}
+
 /* Large Desktop (1440px and above) */
 @media screen and (min-width: 1440px) {
 

@@ -27,9 +27,8 @@ function startTimer() {
 function updateProgress() {
   const progress = ((currentQuestion + 1) / totalQuestions) * 100;
   progressBar.value = progress;
-  questionNumber.textContent = `Question ${
-    currentQuestion + 1
-  }/${totalQuestions}`;
+  questionNumber.textContent = `Question ${currentQuestion + 1
+    }/${totalQuestions}`;
 }
 
 function showQuestion(index) {
