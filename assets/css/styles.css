@@ -1511,7 +1511,7 @@ nav {
 .enrolling_informationContainer {
     position: absolute;
     left: 5%;
-    bottom: 17%;
+    bottom: -4%;
     display: flex;
     align-items: center;
     justify-content: center;
