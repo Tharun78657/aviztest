@@ -747,21 +747,6 @@ html {
     height: 100% !important;
   }
 
-  .slideshow-arrow {
-    font-size: 30px !important;
-    text-shadow: 0 0 5px white;
-    /* Make arrows readable over images */
-  }
-
-  .slideshow-arrow-left {
-    left: 10px !important;
-    z-index: 1001;
-  }
-
-  .slideshow-arrow-right {
-    right: 10px !important;
-    z-index: 1001;
-  }
 
   .moment-caption {
     display: none !important;

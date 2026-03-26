@@ -69,67 +69,9 @@ class InfiniteScrollMoments {
 
   init() {
     this.createInfiniteScroll();
-    this.addArrowButtons();
     this.loadYouTubeAPI();
   }
 
-  addArrowButtons() {
-    const container = this.wrapper.parentElement;
-
-    // Create left arrow
-    const leftArrow = document.createElement('button');
-    leftArrow.className = 'slideshow-arrow slideshow-arrow-left';
-    leftArrow.innerHTML = '&lt;';
-    leftArrow.setAttribute('aria-label', 'Previous');
-    leftArrow.addEventListener('click', () => this.handleLeftArrow());
-
-    // Create right arrow
-    const rightArrow = document.createElement('button');
-    rightArrow.className = 'slideshow-arrow slideshow-arrow-right';
-    rightArrow.innerHTML = '&gt;';
-    rightArrow.setAttribute('aria-label', 'Next');
-    rightArrow.addEventListener('click', () => this.handleRightArrow());
-
-    container.appendChild(leftArrow);
-    container.appendChild(rightArrow);
-
-    this.leftArrow = leftArrow;
-    this.rightArrow = rightArrow;
-  }
-
-  handleLeftArrow() {
-    // Resume the slideshow if it's paused
-    if (this.isSlideshowPaused) {
-      this.resumeSlideshow();
-      this.isSlideshowPaused = false;
-    }
-
-    // Scroll left by one card width
-    const firstCard = this.wrapper.querySelector('.moment-card');
-    const cardWidth = firstCard ? firstCard.offsetWidth + 20 : 320; // card + 20px gap
-    if (this.scrollTrack) {
-      const currentTransform = this.scrollTrack.style.transform || 'translateX(0px)';
-      const currentX = parseFloat(currentTransform.match(/-?\d+\.?\d*/)?.[0] || 0);
-      this.scrollTrack.style.transform = `translateX(${currentX + cardWidth}px)`;
-    }
-  }
-
-  handleRightArrow() {
-    // Resume the slideshow if it's paused
-    if (this.isSlideshowPaused) {
-      this.resumeSlideshow();
-      this.isSlideshowPaused = false;
-    }
-
-    // Scroll right by one card width
-    const firstCard = this.wrapper.querySelector('.moment-card');
-    const cardWidth = firstCard ? firstCard.offsetWidth + 20 : 320; // card + 20px gap
-    if (this.scrollTrack) {
-      const currentTransform = this.scrollTrack.style.transform || 'translateX(0px)';
-      const currentX = parseFloat(currentTransform.match(/-?\d+\.?\d*/)?.[0] || 0);
-      this.scrollTrack.style.transform = `translateX(${currentX - cardWidth}px)`;
-    }
-  }
 
   loadYouTubeAPI() {
     // Load YouTube IFrame API

@@ -32,7 +32,7 @@
   !function (f, b, e, v, n, t, s) {
     if (f.fbq) return; n = f.fbq = function () {
       n.callMethod ?
-      n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
     };
     if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
     n.queue = []; t = b.createElement(e); t.async = !0;
@@ -61,39 +61,39 @@
   <div class="container-1">
     <div class="batch-info">
       <div class="batch_desc">
-        <p>New Batch Starting From 18th Jan in <span
-            style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span> Limited Seats Available Only
-          <span class="alert"><i class="fa-solid fa-alarm-clock"></i></span> </p>
+        <p>New Batch Starting From <span style="font-weight: 600;">March 30th at 7:00 AM IST</span> in <span
+            style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span> Limited Seats Available <span
+            class="alert"><i class="fa-solid fa-alarm-clock"></i></span> </p>
 
       </div>
       <div class="batch_desc">
-        <p>New Batch Starting From 18th Jan in <span
-            style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span> Limited Seats Available Only
-          <span class="alert"><i class="fa-solid fa-alarm-clock"></i></span> </p>
+        <p>New Batch Starting From <span style="font-weight: 600;">March 30th at 7:00 AM IST</span> in <span
+            style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span> Limited Seats Available <span
+            class="alert"><i class="fa-solid fa-alarm-clock"></i></span> </p>
 
       </div>
       <div class="batch_desc">
-        <p>New Batch Starting From 18th Jan in <span
-            style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span> Limited Seats Available Only
-          <span class="alert"><i class="fa-solid fa-alarm-clock"></i></span> </p>
+        <p>New Batch Starting From <span style="font-weight: 600;">March 30th at 7:00 AM IST</span> in <span
+            style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span> Limited Seats Available <span
+            class="alert"><i class="fa-solid fa-alarm-clock"></i></span> </p>
 
       </div>
       <div class="batch_desc">
-        <p>New Batch Starting From 18th Jan in <span
-            style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span> Limited Seats Available Only
-          <span class="alert"><i class="fa-solid fa-alarm-clock"></i></span> </p>
+        <p>New Batch Starting From <span style="font-weight: 600;">March 30th at 7:00 AM IST</span> in <span
+            style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span> Limited Seats Available <span
+            class="alert"><i class="fa-solid fa-alarm-clock"></i></span> </p>
 
       </div>
       <div class="batch_desc">
-        <p>New Batch Starting From 18th Jan in <span
-            style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span> Limited Seats Available Only
-          <span class="alert"><i class="fa-solid fa-alarm-clock"></i></span> </p>
+        <p>New Batch Starting From <span style="font-weight: 600;">March 30th at 7:00 AM IST</span> in <span
+            style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span> Limited Seats Available <span
+            class="alert"><i class="fa-solid fa-alarm-clock"></i></span> </p>
 
       </div>
       <div class="batch_desc">
-        <p>New Batch Starting From 18th Jan in <span
-            style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span> Limited Seats Available Only
-          <span class="alert"><i class="fa-solid fa-alarm-clock"></i></span> </p>
+        <p>New Batch Starting From <span style="font-weight: 600;">March 30th at 7:00 AM IST</span> in <span
+            style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span> Limited Seats Available <span
+            class="alert"><i class="fa-solid fa-alarm-clock"></i></span> </p>
 
       </div>
     </div>
@@ -114,7 +114,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="course.html">Courses</a></li>
-          <li><a href="blog.html">Blogs</a></li>
+          <li><a href="blog.html">Student Achievements</a></li>
           <li><a class="about_us" href="#">About us</a></li>
           <li><a href="contactus.html">Contact us</a></li>
           <li><a class="highlight_practice" href="demosession.html">Demo sessions</a></li>
@@ -212,6 +212,11 @@
       </div>
 
       <div style="display: none;" class="quiz-container">
+        <!-- Logo in top right corner -->
+        <div class="exam-logo-container">
+          <img src="assets/images/logo_hero.png" alt="Logo" class="exam-logo">
+        </div>
+
         <!-- <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 1.5rem;" class="main_questionContainer"> -->
         <div id="quiz-header">
           <div id="question-number">1/62</div>
@@ -1011,6 +1016,8 @@
         </div>
       </div>
       <div style="display: none;" class="next-container">
+        <button type="button" id="prev-button" onclick="previousQuestion()" style="display: none;">Previous
+          question</button>
         <button type="button" id="next-button" onclick="nextQuestion()">Next question</button>
       </div>
     </div>
@@ -1095,6 +1102,7 @@
     const progressBar = document.getElementById("progress-bar");
     const questionNumber = document.getElementById("question-number");
     const nextButton = document.getElementById("next-button");
+    const prevButton = document.getElementById("prev-button");
     let timeLeft = 90 * 60; // 90 minutes × 60 seconds = 5400 seconds
     let timer;
 
@@ -1363,6 +1371,7 @@
     };
 
     function startTimer() {
+      if (timer) clearInterval(timer); // Clear any existing timer
       const timerElement = document.getElementById("timer");
 
 
@@ -1420,7 +1429,24 @@
         nextButton.style.color = "";
       }
 
+      // Show/hide previous button
+      if (index === 0) {
+        prevButton.style.display = "none";
+      } else {
+        prevButton.style.display = "inline-block";
+      }
+
       updateProgress();
+    }
+
+    /**
+     * Move to the previous question
+     */
+    function previousQuestion() {
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        showQuestion(currentQuestion);
+      }
     }
 
     /**
@@ -1443,23 +1469,22 @@
       const quizContainer = document.querySelector(".quiz-container");
       const nextQuestionContainer = document.querySelector(".next-container");
       const startButton = document.querySelector("#start_Exam");
-      // const program_headerContainer=document.querySelector(".program_mainHeaderContainer");
-      // Check if we're starting or restarting
-      const isStarting = quizContainer.style.display === "none" || quizContainer.style.display === "";
 
-      // Toggle visibility
-      quizContainer.style.display = isStarting ? "block" : "none";
-      nextQuestionContainer.style.display = isStarting ? "block" : "none";
-      startButton.style.display = isStarting ? "none" : "block";
-      // program_headerContainer.style.display = isStarting ? "none" : "block";
+      // Enter full-screen mode
+      enterFullScreen();
 
-      // If starting, initialize the quiz
-      if (isStarting) {
-        currentQuestion = 0;
-        timeLeft = 90 * 60;
-        showQuestion(currentQuestion);
-        startTimer();
-      }
+      // Show the quiz container
+      quizContainer.style.display = "block";
+      nextQuestionContainer.style.display = "flex";
+      document.querySelector('.program_mainHeaderContainer').style.display = 'none';
+      document.querySelector(".exam-logo-container").style.display = "none";
+
+      // Initialize the quiz
+      currentQuestion = 0;
+      timeLeft = 90 * 60;
+      prevButton.style.display = "none";
+      showQuestion(currentQuestion);
+      startTimer();
     }
 
     /**
@@ -1989,18 +2014,152 @@
       const styleEl = document.createElement('style');
       styleEl.id = 'fullscreen-styles';
       styleEl.textContent = `
+    /* Exam Logo Styling */
+    .exam-logo-container {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      z-index: 200;
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .exam-logo {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+    
+    /* Quiz Header - Professional & Simple */
+    #quiz-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: white;
+      padding: 18px 25px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e0e0e0;
+    }
+    
+    #question-number {
+      font-size: 16px;
+      font-weight: 600;
+      color: #2c3e50;
+      white-space: nowrap;
+      min-width: 60px;
+    }
+    
+    #timer {
+      font-size: 16px;
+      font-weight: 600;
+      color: #2c3e50;
+      white-space: nowrap;
+      min-width: 80px;
+      text-align: right;
+    }
+    
+    /* Progress Bar - Clean & Professional */
+    #progress-bar {
+      flex: 1;
+      height: 8px;
+      border-radius: 4px;
+      background-color: #e8eef3;
+      border: none;
+      overflow: hidden;
+    }
+    
+    #progress-bar::-webkit-progress-bar {
+      background-color: #e8eef3;
+      border-radius: 4px;
+    }
+    
+    #progress-bar::-webkit-progress-value {
+      background-color: #ff8c42;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+    
+    #progress-bar::-moz-progress-bar {
+      background-color: #ff8c42;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+    
+    #progress-bar::-ms-fill {
+      background-color: #ff8c42;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+    
+    /* Updated Question and Options Layout */
+    .question {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    
+    .question p {
+      font-size: 20px;
+      font-weight: 600;
+      color: #2c3e50;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+    
+    .question label {
+      display: block;
+      padding: 15px 20px;
+      margin-bottom: 12px;
+      background: #f8f9fa;
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      color: #495057;
+    }
+    
+    .question label:hover {
+      background: #e7f3ff;
+      border-color: #2c7be5;
+      transform: translateX(5px);
+    }
+    
+    .question input[type="radio"],
+    .question input[type="checkbox"] {
+      margin-right: 12px;
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+    }
+    
     .multipe_qsContainer:fullscreen {
-      background-color: white; /* Or whatever your desired background color is */
+      background-image: url('assets/images/Aviz-exma-brand-bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       overflow-y: auto;
       padding: 20px;
       width: 100%;
       height: 100%;
-      position: relative; /* Needed for absolute positioning of children */
+      position: relative;
     }
     
     /* Vendor prefixes for different browsers */
     .multipe_qsContainer:-webkit-full-screen {
-      background-color: white;
+      background-image: url('assets/images/Aviz-exma-brand-bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       overflow-y: auto;
       padding: 20px;
       width: 100%;
@@ -2009,7 +2168,11 @@
     }
     
     .multipe_qsContainer:-moz-full-screen {
-      background-color: white;
+      background-image: url('assets/images/Aviz-exma-brand-bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       overflow-y: auto;
       padding: 20px;
       width: 100%;
@@ -2018,7 +2181,11 @@
     }
     
     .multipe_qsContainer:-ms-fullscreen {
-      background-color: white;
+      background-image: url('assets/images/Aviz-exma-brand-bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       overflow-y: auto;
       padding: 20px;
       width: 100%;
@@ -2035,11 +2202,14 @@
       bottom: 20px;
       left: 0;
       right: 0;
-      text-align: center;
-      background-color: white;
-      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background-color: rgba(255, 255, 255, 0.95);
       box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
       z-index: 100;
+      backdrop-filter: blur(10px);
     }
     
     /* Add some bottom padding to the quiz form to prevent content from being hidden behind the fixed button */
@@ -2047,7 +2217,7 @@
     .multipe_qsContainer:-webkit-full-screen #quiz-form,
     .multipe_qsContainer:-moz-full-screen #quiz-form,
     .multipe_qsContainer:-ms-fullscreen #quiz-form {
-      padding-bottom: 70px; /* Ensure content isn't hidden behind the button */
+      padding-bottom: 70px;
     }
   `;
 
@@ -2073,20 +2243,7 @@
     }
 
     // Modify your existing start function to enter full-screen mode
-    function start() {
-      // Enter full-screen mode
-      enterFullScreen();
 
-      // Show the quiz container
-      document.querySelector('.quiz-container').style.display = 'block';
-      document.querySelector('.next-container').style.display = 'block';
-
-      // Hide the start button
-      document.querySelector('.program_mainHeaderContainer').style.display = 'none';
-
-      // Initialize the quiz (your existing quiz initialization code)
-      // ...
-    }
 
     // Create a prompt div for fullscreen reminder
     function createFullscreenPrompt() {
@@ -2160,7 +2317,6 @@
       createFullscreenPrompt();
       addFullscreenStyles();
     });
-    startTimer()
   </script>
 
 </body>
