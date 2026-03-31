@@ -1904,6 +1904,33 @@ span.enroll_btn {
     gap: 1rem;
 }
 
+/*----course preview responsive styles------*/
+.pdf-viewer-wrapper {
+    transition: height 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+    .pdf-viewer-wrapper {
+        height: 600px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .coursedetails_mainContainer {
+        padding: 10px !important;
+    }
+    
+    .pdf-viewer-wrapper {
+        height: 500px !important;
+        border-radius: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pdf-viewer-wrapper {
+        height: 400px !important;
+    }
+}
 /*----course preview ends------*/
 
 /*---------Testimonals-----------*/
