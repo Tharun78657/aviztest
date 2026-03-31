@@ -2085,6 +2085,45 @@ span.enroll_btn {
 }
 
 /* Arrow Navigation Buttons */
+.slideshow-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #293C85;
+    font-size: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    /* Extremely high to ensure visibility */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    padding: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slideshow-arrow:hover {
+    color: #fbaa3c;
+    transform: translateY(-50%) scale(1.2);
+    text-shadow: 0 3px 6px rgba(251, 170, 60, 0.3);
+}
+
+.slideshow-arrow:active {
+    transform: translateY(-50%) scale(1);
+}
+
+.slideshow-arrow-left {
+    left: -100px;
+    /* Pushed significantly away from the images */
+}
+
+.slideshow-arrow-right {
+    right: -100px;
+    /* Pushed significantly away from the images */
+}
 
 /* Responsive arrow buttons */
 @media screen and (max-width: 768px) {
@@ -2094,6 +2133,17 @@ span.enroll_btn {
         height: 160px;
     }
 
+    .slideshow-arrow {
+        font-size: 40px;
+    }
+
+    .slideshow-arrow-left {
+        left: -30px;
+    }
+
+    .slideshow-arrow-right {
+        right: -30px;
+    }
 }
 
 .dots {
