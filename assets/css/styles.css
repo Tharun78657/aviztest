@@ -1893,6 +1893,9 @@ span.enroll_btn {
     overflow: hidden;
     border: 2px solid;
     border-color: #ffffffcc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .coursedetails_innerContainer {
