@@ -13,70 +13,70 @@ const classVideos = [
     register:
       "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
   },
-  // {
-  //   _id: 2,
-  //   day: "Day 1 Demo",
-  //   ClassHeader: "aws class",
-  //   SecondHeader: "What is DevOps & How DevOps and AWS is Interlinked",
-  //   infoContainer: "In this session, understand the fundamentals of DevOps and learn how it connects with AWS in real-world environments. Discover why DevOps and cloud skills are essential, how they work together in modern IT, and how this combination powers scalable, secure, and automated systems.",
-  //   iframeSource:
-  //     "https://www.youtube.com/embed/MMMPZ_zr1vg?si=wMg2-62qdQx29fzU",
+  {
+    _id: 2,
+    day: "Day 1 Demo",
+    ClassHeader: "aws class",
+    SecondHeader: "What is DevOps? How AWS & DevOps Work Together and AWS Account creation",
+    infoContainer: "In this session, understand the fundamentals of DevOps and learn how it connects with AWS in real-world environments. Discover why DevOps and cloud skills are essential, how they work together in modern IT and AWS Account creation.",
+    iframeSource:
+      "https://www.youtube.com/embed/xRTlp_KpHTQ?si=3IkKN1zY6h4tNk23",
 
-  //   register:
-  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  // },
-  // {
-  //   _id: 3,
-  //   day: "Day 2 Demo",
-  //   ClassHeader: "aws class",
-  //   SecondHeader: "AWS Account creation, MFA and Support Plans Overview",
-  //   infoContainer:
-  //     "Learn how to set up an AWS account, configure MFA for security, understand AWS Support Plans and best practices for managing access and cloud security from day one.",
-  //   iframeSource:
-  //     "https://www.youtube.com/embed/TtfgLH-ZNdg?si=iREdrjt-mfHRgNFh",
-  //   thubnailImg: "assets/images/day2.jpg",
-  //   register:
-  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  // },
-  // {
-  //   _id: 4,
-  //   day: "Day 3 Demo",
-  //   ClassHeader: "aws class",
-  //   SecondHeader: " AWS Global infrastructure & IAM User Creation",
-  //   infoContainer:
-  //     "In this session, explore AWS Regions & Availability Zones, learn how to create your first IAM user, enable MFA on your root account, and understand essential AWS security best practices to build a strong and secure cloud foundation.",
-  //   iframeSource:
-  //     "https://www.youtube.com/embed/wunX9DCq8Cg?si=3qvFU6BOCm-1CRl_",
-  //   thubnailImg: "assets/images/day3.jpg",
-  //   register:
-  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  // },
-  // {
-  //   _id: 5,
-  //   day: "Day 4 Demo",
-  //   ClassHeader: "aws class",
-  //   SecondHeader: "IAM Policies Deep Dive",
-  //   infoContainer:
-  //     "Dive into AWS Identity and Access Management (IAM) policies to learn how to manage permissions effectively, ensuring secure access control for your AWS resources.",
-  //   iframeSource:
-  //     "https://www.youtube.com/embed/0i_33np2TBc?si=bBt2GG_fq7JcxZZM",
-  //   thubnailImg: "assets/images/day4.jpg",
-  //   register:
-  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  // },
-  // {
-  //   _id: 6,
-  //   day: "Day 5 Demo",
-  //   ClassHeader: "aws class",
-  //   SecondHeader: "IAM Inline Policies, Permission Boundaries, cloudtrail & Policy conditions",
-  //   infoContainer:
-  //     "Deep dive into IAM Inline Policies, Permission Boundaries, and Policy Conditions to control access with precision. Learn how AWS CloudTrail tracks account activity and how credentials reports help ensure security, compliance, and visibility across your AWS environment.",
-  //   iframeSource:
-  //     "https://www.youtube.com/embed/gegrDy-vJiI?si=-ycf8ucNbi_Nutam",
-  //   thubnailImg: "assets/images/day4.jpg",
-  //   register:
-  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  // },
+    register:
+      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  },
+  {
+    _id: 3,
+    day: "Day 2 Demo",
+    ClassHeader: "aws class",
+    SecondHeader: "AWS Global Infrastructure, MFA Setup and Introduction to Identity and Access Management (IAM)",
+    infoContainer:
+      "Introduction the fundamentals of AWS, including its Global Infrastructure (Regions, Availability Zones) for building reliable and scalable applications. It also covers setting up Multi-Factor Authentication (MFA) to enhance account security and provides an overview of Identity and Access Management (IAM) for managing users, roles, and permissions securely using best practices like least privilege.",
+    iframeSource:
+      "https://www.youtube.com/embed/5gA5TzwFf90?si=4MJTduiqCoceW6LP",
+    thubnailImg: "assets/images/day2.jpg",
+    register:
+      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  },
+  {
+    _id: 4,
+    day: "Day 3 Demo",
+    ClassHeader: "aws class",
+    SecondHeader: "IAM Introduction, Password Policies and Support Plans",
+    infoContainer:
+      "In this session, we explored the fundamentals of AWS Identity and Access Management (IAM), focusing on secure access control through users, groups, roles, and permissions. We also covered the implementation of strong password policies to enhance account security, along with an overview of AWS Support Plans to ensure effective technical assistance and operational continuity.",
+    iframeSource:
+      "https://www.youtube.com/embed/7fWQfe5gFeo?si=xNqqIRbgZ1YvQR3g",
+    thubnailImg: "assets/images/day3.jpg",
+    register:
+      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  },
+  {
+    _id: 5,
+    day: "Day 4 Demo",
+    ClassHeader: "aws class",
+    SecondHeader: "AWS IAM Policies Deep Dive, Permissions Boundary, Cloudtrail and Credentials report",
+    infoContainer:
+      "This session provides a deep dive into AWS IAM policies, including advanced permission management techniques such as permissions boundaries. It also covers AWS CloudTrail for monitoring and auditing account activity, along with credential reports to enhance security, compliance, and access governance within AWS environments",
+    iframeSource:
+      "https://www.youtube.com/embed/ajGwGC8fdRA?si=z7HOWUXB_kLSdZvS",
+    thubnailImg: "assets/images/day4.jpg",
+    register:
+      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  },
+  {
+    _id: 6,
+    day: "Day 5 Demo",
+    ClassHeader: "aws class",
+    SecondHeader: " IAM Wrapup and Introduction to EC2 and pricing options",
+    infoContainer:
+      "A brief wrap-up of AWS IAM concepts, covering roles and policies for secure access, followed by an introduction to Amazon EC2 and its pricing options, including On-Demand, Reserved, and Spot Instances.",
+    iframeSource:
+      "https://www.youtube.com/embed/EHazekFMDbI?si=lWp2vsV6DWxgBcZO",
+    thubnailImg: "assets/images/day4.jpg",
+    register:
+      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  },
   // {
   //   _id: 7,
   //   day: "Day 6 Demo",

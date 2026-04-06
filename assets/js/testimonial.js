@@ -10,7 +10,7 @@ const academyMoments = [
     {
         id: 2,
         type: "video",
-        videoUrl: "https://www.youtube.com/embed/QyoQGtOhpgo?enablejsapi=1",
+        videoUrl: "https://www.youtube.com/embed/N4xffaFPaLc?enablejsapi=1",
         videoId: "video-newbatch",
         caption: "📢 New Batch Starting Soon – Join the Cloud Journey!"
     },
@@ -31,7 +31,7 @@ const academyMoments = [
     {
         id: 8,
         type: "video",
-        videoUrl: "https://www.youtube.com/embed/16Sqtxbz2-c?enablejsapi=1",
+        videoUrl: "https://www.youtube.com/embed/xQS8YTniBtk?enablejsapi=1",
         videoId: "video-student-2",
         caption: "✨ Amazing Moments from our AWS Community"
     },
