@@ -77,19 +77,19 @@ const classVideos = [
     register:
       "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
   },
-  // {
-  //   _id: 7,
-  //   day: "Day 6 Demo",
-  //   ClassHeader: "aws class",
-  //   SecondHeader: "IAM warp up & EC2 introduction & Launching LINUX Instance",
-  //   infoContainer:
-  //     "Master the essentials of AWS security with a quick IAM recap, then step into compute services by understanding EC2 fundamentals and launching your first Linux instance. Perfect for beginners building strong cloud foundations!",
-  //   iframeSource:
-  //     "https://www.youtube.com/embed/GN6XdivxjCU?si=6448q2lM4yFKA9tq",
-  //   thubnailImg: "assets/images/day4.jpg",
-  //   register:
-  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  // },
+  {
+    _id: 7,
+    day: "Day 6 Demo",
+    ClassHeader: "aws class",
+    SecondHeader: "EC2 Windows Instance Setup Blueprint From AMI Selection To Live Server ",
+    infoContainer:
+      "Setup a Windows-based EC2 instance on AWS, starting from AMI selection through deployment to a fully accessible live server. This blueprint covers key steps including instance configuration, security settings, RDP access, and initial setup for production readiness. It ensures a streamlined, secure, and scalable deployment process.",
+    iframeSource:
+      "https://www.youtube.com/embed/rfUMoK2MxJc?si=fhQa05yvmyyhas5j",
+    thubnailImg: "assets/images/day4.jpg",
+    register:
+      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  },
   // {
   //   _id: 8,
   //   day: "Day 7 Demo",

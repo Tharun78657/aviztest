@@ -581,18 +581,27 @@ html {
     background-color: #fff;
     border-radius: 12px;
     padding: 2rem;
+    position: relative;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .scanner_enrollement {
+    margin-top: 0;
+    width: 100%;
+    justify-content: center;
   }
 
   .enrolling_informationContainer .course_headerContainer {
-    align-items: center;
+    align-items: flex-start;
   }
 
   .enrolling_informationContainer .course_infoDetails {
-    align-items: center;
+    align-items: flex-start;
   }
 
   .enrolling_informationContainer .course_duration {
-    align-items: center;
+    align-items: flex-start;
   }
 
   .enrolling_sectionContainer .enroll_btn {

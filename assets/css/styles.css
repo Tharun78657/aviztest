@@ -536,6 +536,9 @@ nav {
     align-items: flex-start;
     justify-content: flex-start;
     gap: 0.5rem;
+    flex: 0 1 auto;
+    white-space: nowrap;
+    min-width: 0;
 }
 
 .course_headerSection .three_rec {
@@ -556,7 +559,8 @@ nav {
     justify-content: flex-start;
     gap: 1rem;
     width: 100%;
-
+    flex-wrap: wrap;
+    overflow-x: hidden;
 }
 
 .course_infoDetails .course-divider {
@@ -568,9 +572,11 @@ nav {
 
 .course_duration .duration {
     background-color: var(--colors-shakespeare-500);
-    padding: 8px 16px;
+    padding: 8px 12px;
     border-radius: 12px;
-
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .sm-btn {
@@ -1510,12 +1516,23 @@ nav {
 
 .enrolling_informationContainer {
     position: absolute;
-    left: 5%;
-    bottom: -4%;
+    left: 4%;
+    bottom: -8%;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    gap: 4rem;
+    margin-left: 2rem;
+    width: 93%;
+    box-sizing: border-box;
+}
+
+.scanner_enrollement {
+    display: flex;
     justify-content: center;
-    gap: 6rem;
+    align-items: flex-start;
+    flex-shrink: 0;
+    margin-top: -7rem;
 }
 
 .enrolling_sectionContainer .enrolling {
@@ -2592,6 +2609,26 @@ footer .designed_privacyCopyright {
         padding: 1.5rem 1.5rem 2.5rem;
     }
 
+    .enrolling_informationContainer {
+        flex-direction: column;
+        position: relative;
+        left: 0;
+        bottom: 0;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .scanner_enrollement {
+        margin-top: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .scanner_enrollement img {
+        width: 150px;
+        height: 150px;
+    }
+
     .enrolling_sectionContainer {
         padding-top: 2rem;
     }
@@ -2622,6 +2659,22 @@ footer .designed_privacyCopyright {
 @media screen and (max-width: 576px) {
     .course_enrollementInnerContainer {
         padding: 1rem 1rem 2rem;
+    }
+
+    .enrolling_informationContainer {
+        flex-direction: column;
+        position: relative;
+        left: 0;
+        bottom: 0;
+        margin-left: 0;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .scanner_enrollement {
+        margin-top: 0;
+        width: 100%;
+        justify-content: center;
     }
 
     .program_mainHeaderContainer h2 {
@@ -2662,6 +2715,22 @@ footer .designed_privacyCopyright {
 @media screen and (max-width: 375px) {
     .course_enrollementInnerContainer {
         padding: 1rem 0.75rem 1.5rem;
+    }
+
+    .enrolling_informationContainer {
+        flex-direction: column;
+        position: relative;
+        left: 0;
+        bottom: 0;
+        margin-left: 0;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .scanner_enrollement {
+        margin-top: 0;
+        width: 100%;
+        justify-content: center;
     }
 
     .scanner_enrollement img {
