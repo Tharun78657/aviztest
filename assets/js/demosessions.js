@@ -3,12 +3,12 @@ const classVideos = [
     _id: 1,
     day: "Day-0",
     ClassHeader: "aws class",
-    SecondHeader: "Introduction to Our AWS with DevSecOps Telugu",
+    SecondHeader: "Introduction to Our AWS with DevSecOps Program - Telugu",
     thumbnailImg: "assets/images/Day0.jpg",
     infoContainer:
       "Welcome to the AWS & DevSecOps Program with Avinash Reddy! In this demo session, you'll get a complete overview of the course roadmap, learning approach, tools you'll master, and real-world projects you'll work on. Discover how this program will prepare you for cloud, DevOps, and security roles and help you build industry-ready skills before we begin the full journey.",
     iframeSource:
-      "https://www.youtube.com/embed/09r9UbApRp4?si=2pJW0VpJlk719oKo",
+      "https://www.youtube.com/embed/jAxw9bU1WR8?si=ZEGrdDO7gu4FggT9",
 
     register:
       "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
@@ -17,23 +17,23 @@ const classVideos = [
     _id: 2,
     day: "Day 1 Demo",
     ClassHeader: "aws class",
-    SecondHeader: "What is DevOps? How AWS & DevOps Work Together and AWS Account creation",
-    infoContainer: "In this session, understand the fundamentals of DevOps and learn how it connects with AWS in real-world environments. Discover why DevOps and cloud skills are essential, how they work together in modern IT and AWS Account creation.",
+    SecondHeader: "Introduction to Cloud and DevOps with Waterfall vs Agile vs DevOps",
+    infoContainer: "In this session, we cover the Introduction to Cloud and DevOps, and explore the differences between Waterfall, Agile, and DevOps methodologies. You'll learn how these approaches work and their role in modern software development and cloud infrastructure.",
     iframeSource:
-      "https://www.youtube.com/embed/xRTlp_KpHTQ?si=3IkKN1zY6h4tNk23",
+      "https://www.youtube.com/embed/NtKQNMvINFI?si=UrB1397K238saRrV",
 
     register:
       "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
   },
   {
     _id: 3,
-    day: "Day 2 Demo",
+    day: "Day 2",
     ClassHeader: "aws class",
-    SecondHeader: "AWS Global Infrastructure, MFA Setup and Introduction to Identity and Access Management (IAM)",
+    SecondHeader: "AWS Account Creation, Support Plans and Global Infrastructure Deep-Dive",
     infoContainer:
-      "Introduction the fundamentals of AWS, including its Global Infrastructure (Regions, Availability Zones) for building reliable and scalable applications. It also covers setting up Multi-Factor Authentication (MFA) to enhance account security and provides an overview of Identity and Access Management (IAM) for managing users, roles, and permissions securely using best practices like least privilege.",
+      "This session covers the step-by-step process of AWS Account Creation, an overview of AWS Support Plans, and a deep-dive into AWS Global Infrastructure. It provides the foundational knowledge needed to start your cloud journey securely.",
     iframeSource:
-      "https://www.youtube.com/embed/5gA5TzwFf90?si=4MJTduiqCoceW6LP",
+      "https://www.youtube.com/embed/5Wx_Rwswo1k?si=rxtP2-ycL73lq4Im",
     thubnailImg: "assets/images/day2.jpg",
     register:
       "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
@@ -42,11 +42,11 @@ const classVideos = [
     _id: 4,
     day: "Day 3 Demo",
     ClassHeader: "aws class",
-    SecondHeader: "IAM Introduction, Password Policies and Support Plans",
+    SecondHeader: "AWS Edge Locations, MFA Enable, IAM Introduction and User Creations",
     infoContainer:
-      "In this session, we explored the fundamentals of AWS Identity and Access Management (IAM), focusing on secure access control through users, groups, roles, and permissions. We also covered the implementation of strong password policies to enhance account security, along with an overview of AWS Support Plans to ensure effective technical assistance and operational continuity.",
+      "In this session, we dive into AWS Edge Locations and their role in the global infrastructure. We also introduce AWS Identity and Access Management (IAM), covering how to enable Multi-Factor Authentication (MFA) for enhanced security, and the step-by-step process of creating and managing IAM users.",
     iframeSource:
-      "https://www.youtube.com/embed/7fWQfe5gFeo?si=xNqqIRbgZ1YvQR3g",
+      "https://www.youtube.com/embed/_CZsKJtdubY?si=-dzEfWTnQdmfmF2F",
     thubnailImg: "assets/images/day3.jpg",
     register:
       "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
@@ -55,41 +55,41 @@ const classVideos = [
     _id: 5,
     day: "Day 4 Demo",
     ClassHeader: "aws class",
-    SecondHeader: "AWS IAM Policies Deep Dive, Permissions Boundary, Cloudtrail and Credentials report",
+    SecondHeader: "IAM Policies deep dive with custom policy creation with conditions and policy simulator",
     infoContainer:
-      "This session provides a deep dive into AWS IAM policies, including advanced permission management techniques such as permissions boundaries. It also covers AWS CloudTrail for monitoring and auditing account activity, along with credential reports to enhance security, compliance, and access governance within AWS environments",
+      "In-depth exploration of IAM policies, including policy structure, elements, and evaluation logic. Hands-on demonstration of creating custom IAM policies with specific permissions and conditions. Using the IAM Policy Simulator to test and validate policy behavior before deployment.",
     iframeSource:
-      "https://www.youtube.com/embed/ajGwGC8fdRA?si=z7HOWUXB_kLSdZvS",
+      "https://www.youtube.com/embed/D7spcCy-nok?si=Fw1-Osh3IQHcwMPc",
     thubnailImg: "assets/images/day4.jpg",
     register:
       "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
   },
-  {
-    _id: 6,
-    day: "Day 5 Demo",
-    ClassHeader: "aws class",
-    SecondHeader: " IAM Wrapup and Introduction to EC2 and pricing options",
-    infoContainer:
-      "A brief wrap-up of AWS IAM concepts, covering roles and policies for secure access, followed by an introduction to Amazon EC2 and its pricing options, including On-Demand, Reserved, and Spot Instances.",
-    iframeSource:
-      "https://www.youtube.com/embed/EHazekFMDbI?si=lWp2vsV6DWxgBcZO",
-    thubnailImg: "assets/images/day4.jpg",
-    register:
-      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  },
-  {
-    _id: 7,
-    day: "Day 6 Demo",
-    ClassHeader: "aws class",
-    SecondHeader: "EC2 Windows Instance Setup Blueprint From AMI Selection To Live Server ",
-    infoContainer:
-      "Setup a Windows-based EC2 instance on AWS, starting from AMI selection through deployment to a fully accessible live server. This blueprint covers key steps including instance configuration, security settings, RDP access, and initial setup for production readiness. It ensures a streamlined, secure, and scalable deployment process.",
-    iframeSource:
-      "https://www.youtube.com/embed/rfUMoK2MxJc?si=fhQa05yvmyyhas5j",
-    thubnailImg: "assets/images/day4.jpg",
-    register:
-      "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
-  },
+  // {
+  //   _id: 6,
+  //   day: "Day 5 Demo",
+  //   ClassHeader: "aws class",
+  //   SecondHeader: " Introduction to EC2, Deep Dive into Pricing Models",
+  //   infoContainer:
+  //     "Overview of Amazon EC2 (Elastic Compute Cloud) and its features, along with a detailed examination of the various pricing models available for EC2 instances, including On-Demand, Reserved Instances, Spot Instances, and Savings Plans, to help optimize costs based on workload requirements.",
+  //   iframeSource:
+  //     "https://www.youtube.com/embed/ws3gj96Vhjc?si=Kcp8Fibqod4xWMPs",
+  //   thubnailImg: "assets/images/day4.jpg",
+  //   register:
+  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  // },
+  // {
+  //   _id: 7,
+  //   day: "Day 6 Demo",
+  //   ClassHeader: "aws class",
+  //   SecondHeader: "EC2 Windows Instance Setup Blueprint From AMI Selection To Live Server ",
+  //   infoContainer:
+  //     "Setup a Windows-based EC2 instance on AWS, starting from AMI selection through deployment to a fully accessible live server. This blueprint covers key steps including instance configuration, security settings, RDP access, and initial setup for production readiness. It ensures a streamlined, secure, and scalable deployment process.",
+  //   iframeSource:
+  //     "https://www.youtube.com/embed/rfUMoK2MxJc?si=fhQa05yvmyyhas5j",
+  //   thubnailImg: "assets/images/day4.jpg",
+  //   register:
+  //     "https://awswithavinashreddy.my.webex.com/weblink/register/r0b7834a679fdc79bc7dd2dc51efbe3d4",
+  // },
   // {
   //   _id: 8,
   //   day: "Day 7 Demo",

@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aviz Academy — AWS + DevSecOps Job Ready Program</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/responive.css">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="assets/js/navbar.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<style>
+  :root{
+    --navy:#1c2a76;
+    --navy-deep:#0f1a4f;
+    --footer:#15246c;
+    --orange:#f6871e;
+    --orange-deep:#ef7d12;
+    --blue:#2f7ec6;
+    --teal:#1f9cc0;
+    --ink:#2c2c34;
+    --ink-soft:#3a3a44;
+    --pill:#3071c2;
+    --light-a:#eaf5f6;
+    --light-b:#f6eef8;
+    --paper-shadow:0 18px 50px rgba(28,34,80,.16);
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:"Nunito",system-ui,sans-serif;
+    color:var(--ink);
+    background:#d7dae3;
+    background-image:radial-gradient(circle at 20% 0%, #e2e5ee 0%, #cfd3dd 60%, #c4c8d4 100%);
+    padding:0;
+    line-height:1.5;
+  }
+  .deck{
+    max-width:920px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+    padding:60px 16px 64px;
+  }
+  /* ---- generic A4 sheet ---- */
+  .sheet{
+    position:relative;
+    width:100%;
+    aspect-ratio:1 / 1.414;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:var(--paper-shadow);
+    background:#fff;
+    container-type:inline-size;
+  }
+  .sheet.auto{aspect-ratio:auto;}
+  .pad{padding:54px 54px 0;}
+  .lightbg{
+    background:
+      radial-gradient(120% 90% at 0% 0%, var(--light-a) 0%, transparent 55%),
+      radial-gradient(120% 100% at 100% 100%, var(--light-b) 0%, transparent 55%),
+      linear-gradient(135deg,#eef7f7 0%,#f3eff8 100%);
+  }
+  .dotfield{
+    position:absolute;inset:0;pointer-events:none;
+    background-image:radial-gradient(rgba(120,140,210,.16) 1.4px, transparent 1.6px);
+    background-size:13px 13px;
+    -webkit-mask-image:radial-gradient(120% 80% at 105% 35%, #000 0%, transparent 42%);
+            mask-image:radial-gradient(120% 80% at 105% 35%, #000 0%, transparent 42%);
+    opacity:.7;
+  }
+  .watermark{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    pointer-events:none;overflow:hidden;
+  }
+  .watermark span{
+    font-family:"Baloo 2",sans-serif;font-weight:800;
+    font-size:140px;letter-spacing:6px;color:#1c2a76;opacity:.05;
+    transform:rotate(-8deg);white-space:nowrap;
+  }
+  /* ---- shared logo ---- */
+  .logo{height:54px;width:auto;display:block;}
+  .topbar{display:flex;justify-content:flex-end;}
+
+  /* ---- footer bar ---- */
+  .footerbar{
+    position:absolute;left:0;right:0;bottom:0;
+    background:var(--footer);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;padding:16px 40px;flex-wrap:wrap;
+  }
+  .footerbar .fitem{display:flex;align-items:center;gap:12px;font-weight:700;font-size:15px;}
+  .footerbar svg{flex:none;}
+  .footerbar .ico-box{
+    width:30px;height:30px;border-radius:7px;border:1.6px solid rgba(255,255,255,.7);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .footerbar .addr{flex-basis:100%;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14.5px;border-top:1px solid rgba(255,255,255,.16);padding-top:11px;margin-top:2px;}
+
+  /* contact glyph badges (cover) */
+  .ci{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex:none;}
+  .ci.wa{background:#25d366;}
+  .ci.web{background:#eaf2ff;border:1.5px solid #2f7ec6;}
+  .ci.pin{background:#fdeaea;border:1.5px solid #e0473e;}
+
+  /* ============ PAGE 1 — COVER ============ */
+  .cover{display:flex;flex-direction:column;height:auto;}
+  .cover .pad{display:flex;flex-direction:column;}
+  .cover-wave{
+    position:absolute;top:0;right:0;width:42%;height:100%;pointer-events:none;opacity:.5;
+    background:
+      radial-gradient(closest-side, transparent 78%, rgba(120,150,220,.25) 79%, transparent 81%) -40% 8%/180% 60% no-repeat,
+      radial-gradient(closest-side, transparent 80%, rgba(160,120,210,.18) 81%, transparent 83%) -10% 30%/200% 80% no-repeat;
+  }
+  .arrow-dots{
+    position:absolute;left:0;top:30%;width:26%;height:22%;opacity:.5;pointer-events:none;
+    background-image:radial-gradient(rgba(70,110,200,.35) 1.5px, transparent 1.7px);
+    background-size:11px 11px;
+    -webkit-mask-image:linear-gradient(60deg,#000,transparent 75%);
+            mask-image:linear-gradient(60deg,#000,transparent 75%);
+  }
+  .title-aws{
+    font-family:"Baloo 2",sans-serif;font-weight:800;color:var(--navy);
+    font-size:clamp(40px,9.4cqi,86px);line-height:.95;letter-spacing:-1px;margin:22px 0 0;
+  }
+  .handson{font-family:"Baloo 2",sans-serif;font-weight:500;color:#3a4470;font-size:clamp(20px,4.4cqi,40px);margin:14px 0 0;}
+  .ready-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:12px;}
+  .hours-badge{
+    background:var(--navy);color:#fff;font-family:"Baloo 2",sans-serif;font-weight:700;
+    font-size:clamp(20px,4.4cqi,38px);padding:4px 20px;border-radius:12px;white-space:nowrap;
+  }
+  .job-ready{font-family:"Baloo 2",sans-serif;font-weight:700;color:var(--navy);font-size:clamp(20px,4.4cqi,38px);white-space:nowrap;}
+  .hero-wrap{display:flex;align-items:center;justify-content:center;padding:24px 0 16px;}
+  .hero-wrap img{width:min(60%,420px);height:auto;max-height:280px;object-fit:contain;}
+  .tagline{
+    font-family:"Baloo 2",sans-serif;font-weight:700;color:var(--navy);text-align:center;
+    font-size:clamp(16px,3.2cqi,26px);line-height:1.25;margin:0 auto 26px;max-width:78%;text-wrap:balance;
+  }
+  .cover-contact{display:flex;flex-direction:column;gap:15px;padding-bottom:26px;}
+  .cc-main{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;}
+  .cc-list{display:flex;flex-direction:column;gap:15px;}
+  .cc-row{display:flex;align-items:center;gap:13px;font-weight:800;color:var(--navy);font-size:clamp(14px,2.5cqi,19px);}
+  .cc-row.addr{font-weight:700;font-size:clamp(12px,2.2cqi,16.5px);}
+  .qr-block{display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .qr-block img{width:130px;height:130px;border-radius:8px;display:block;padding:8px;background:#fff;border:2px solid #e0e6f0;box-shadow:0 4px 14px rgba(28,42,118,.12);}
+  .qr-block span{color:var(--navy);font-weight:700;font-size:clamp(12px,2.1cqi,14px);letter-spacing:.2px;}
+  .cover-footstrip{height:26px;background:#4a93da;}
+
+  /* ============ PAGE 2 — WHY CHOOSE (dark) ============ */
+  .dark{
+    background:
+      radial-gradient(120% 90% at 80% 30%, #16224a 0%, transparent 60%),
+      radial-gradient(90% 90% at 15% 80%, #122 0%, transparent 60%),
+      linear-gradient(160deg,#0a1024 0%,#0c1226 50%,#070b18 100%);
+    color:#fff;
+  }
+  .dark .wm2{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;
+  }
+  .dark .wm2 span{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:120px;color:#fff;opacity:.04;letter-spacing:8px;transform:rotate(-6deg);}
+  .why-title{
+    font-family:"Baloo 2",sans-serif;font-weight:700;color:var(--orange);
+    font-size:clamp(28px,6.4cqi,56px);text-align:center;margin:40px 0 6px;
+  }
+  .why-grid{position:relative;padding:18px 30px 30px;}
+  .why-grid::before{content:"";position:absolute;top:24px;bottom:30px;left:50%;width:3px;background:#2f6fc2;transform:translateX(-50%);border-radius:2px;}
+  .why-row{display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:78px;position:relative;}
+  .pill{
+    position:relative;background:#2f6fc2;color:#fff;font-family:"Baloo 2",sans-serif;font-weight:600;
+    font-size:clamp(15px,3cqi,23px);line-height:1.18;padding:16px 26px;border-radius:16px;
+    box-shadow:0 8px 22px rgba(0,0,0,.35);max-width:330px;
+  }
+  .why-row.left .pill{margin-left:auto;border-bottom-right-radius:4px;}
+  .why-row.right .pill{grid-column:2;border-bottom-left-radius:4px;}
+  .why-row.left .pill::after,.why-row.right .pill::after{
+    content:"";position:absolute;bottom:0;width:0;height:0;border:11px solid transparent;
+  }
+  .why-row.left .pill::after{right:-9px;border-left-color:#2f6fc2;border-bottom-color:#2f6fc2;}
+  .why-row.right .pill::after{left:-9px;border-right-color:#2f6fc2;border-bottom-color:#2f6fc2;}
+  .why-row .dot{position:absolute;top:50%;left:50%;width:13px;height:13px;border-radius:50%;background:#5fa0e8;transform:translate(-50%,-50%);box-shadow:0 0 0 4px rgba(95,160,232,.25);}
+
+  /* ============ PAGE 3 — TRAINER ============ */
+  .trainer-h{
+    font-family:"Baloo 2",sans-serif;font-weight:700;color:var(--navy);
+    font-size:clamp(24px,5.1cqi,44px);margin:30px 0 4px;
+  }
+  .trainer-h + .rule{height:4px;width:62%;background:var(--orange);border-radius:3px;margin-bottom:22px;}
+  .trainer-body{position:relative;z-index:2;}
+  .trainer-body p{font-size:clamp(14px,2.9cqi,21px);color:var(--ink-soft);margin:0 0 16px;line-height:1.5;}
+  .trainer-body .o{color:var(--orange);font-weight:800;}
+  .trainer-body .b{color:var(--navy);font-weight:800;}
+  .trainer-body .lb{color:#3a8fd6;font-weight:800;}
+  .cert-h{font-family:"Baloo 2",sans-serif;font-weight:700;color:var(--navy);font-size:clamp(15px,3.1cqi,23px);letter-spacing:.3px;margin:4px 0 12px;}
+  .cert-list{list-style:none;margin:0 0 14px;padding:0;display:flex;flex-direction:column;gap:8px;}
+  .cert-list li{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy);font-size:clamp(15px,3.1cqi,23px);}
+  .cert-list .ck{color:var(--orange);font-weight:900;font-size:1.1em;}
+  .quote{position:relative;margin:18px 0 4px;max-width:54%;}
+  .quote p{font-style:italic;font-weight:700;color:var(--navy);font-size:clamp(15px,3.1cqi,23px);line-height:1.4;margin:0;}
+  .quote .qm{color:var(--navy);font-weight:900;}
+  .quote .sig{color:var(--orange);font-weight:800;font-style:normal;margin-top:10px;font-family:"Baloo 2",sans-serif;font-size:clamp(15px,3.2cqi,24px);}
+  .trainer-photo{position:absolute;right:0;bottom:0;width:42%;max-width:380px;z-index:1;}
+  .trainer-photo img{width:100%;height:auto;display:block;}
+
+  /* ============ COURSE CONTENT (pages 4-7) ============ */
+  .course-title-wrap{display:flex;justify-content:center;margin:30px 0 26px;}
+  .course-title{
+    background:var(--orange);color:#fff;font-family:"Baloo 2",sans-serif;font-weight:700;
+    font-size:clamp(24px,5.1cqi,44px);padding:6px 40px;border-radius:14px;white-space:nowrap;
+    box-shadow:0 10px 22px rgba(246,135,30,.32);
+  }
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px 46px;position:relative;z-index:2;padding-bottom:30px;}
+  .col{display:flex;flex-direction:column;}
+  .sec{margin-bottom:14px;}
+  h3.sh{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:clamp(15px,2.9cqi,21px);margin:8px 0 4px;line-height:1.14;letter-spacing:-.2px;}
+  .sec h3.sh{position:relative;display:inline-block;}
+  .h-blue{color:var(--blue);border-bottom:2px solid rgba(47,126,198,.4);padding-bottom:1px;}
+  .h-teal{color:var(--teal);border-bottom:2px solid rgba(31,156,192,.4);padding-bottom:1px;}
+  .h-orange{color:var(--orange);font-weight:800;}
+  ul.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px;}
+  ul.list li{font-size:clamp(13.5px,2.7cqi,20px);color:var(--ink);line-height:1.32;font-weight:500;}
+  ul.list li b{font-weight:800;color:#1f1f27;}
+  .bigorange{
+    font-family:"Baloo 2",sans-serif;font-weight:700;color:var(--orange);
+    font-size:clamp(17px,3.6cqi,30px);line-height:1.15;padding:6px 0 30px;position:relative;z-index:2;text-align:left;
+  }
+  .callouts{display:flex;flex-direction:column;gap:18px;margin-top:14px;}
+  .callout{display:flex;gap:12px;align-items:flex-start;}
+  .callout .cv{color:var(--blue);font-weight:900;font-size:1.3em;line-height:1;flex:none;margin-top:2px;}
+  .callout p{font-family:"Baloo 2",sans-serif;font-weight:600;color:var(--blue);font-size:clamp(16px,3.3cqi,26px);line-height:1.18;margin:0;}
+  .callout.teal p{color:#2f7ec6;}
+
+  /* ============ PAGE 8 — BENEFITS ============ */
+  .benefits-title{text-align:center;margin:42px 0 8px;}
+  .benefits-title .t1{font-family:"Baloo 2",sans-serif;font-weight:800;color:var(--orange);font-size:clamp(28px,6.6cqi,56px);line-height:1;letter-spacing:.5px;}
+  .benefits-title .t2{font-family:"Baloo 2",sans-serif;font-weight:600;color:var(--blue);font-size:clamp(18px,4cqi,33px);}
+  .benefits{display:flex;flex-direction:column;gap:22px;padding:30px 8px 40px;}
+  .bcard{position:relative;display:flex;align-items:center;gap:18px;width:80%;}
+  .bcard.r{margin-left:auto;flex-direction:row-reverse;text-align:right;}
+  .bcard .icon{width:clamp(64px,12cqi,96px);height:clamp(64px,12cqi,96px);flex:none;}
+  .bcard .icon img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+  .bcard .body{
+    flex:1;background:#fff;border-radius:14px;box-shadow:0 10px 26px rgba(40,50,110,.13);
+    padding:18px 24px;font-family:"Baloo 2",sans-serif;font-weight:500;color:#33333c;
+    font-size:clamp(15px,3cqi,23px);line-height:1.25;position:relative;
+  }
+  .bcard .body::before{content:"";position:absolute;top:14%;bottom:14%;width:9px;border-radius:6px;background:var(--ac,#888);}
+  .bcard:not(.r) .body::before{right:-4px;}
+  .bcard.r .body::before{left:-4px;}
+
+  /* ============ PAGE 9 — CLOSING ============ */
+  .closing-h1{font-family:"Baloo 2",sans-serif;font-weight:800;color:var(--orange);font-size:clamp(26px,5.7cqi,50px);line-height:1.05;margin:34px 0 14px;letter-spacing:.3px;}
+  .closing-badge-wrap{margin-bottom:26px;}
+  .closing-badge{display:inline;background:#3f88d8;color:#fff;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:clamp(17px,3.7cqi,31px);padding:5px 18px;border-radius:12px;line-height:1.7;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+  .closing-body{position:relative;z-index:2;max-width:53%;}
+  .closing-body p{font-size:clamp(14px,2.9cqi,21px);color:var(--ink-soft);line-height:1.55;margin:0 0 18px;}
+  .closing-body .o{color:var(--orange);font-weight:800;}
+  .closing-body .sig{color:var(--orange);font-weight:700;font-style:italic;font-size:clamp(15px,3.1cqi,23px);}
+  .closing-photo{position:absolute;right:5%;bottom:113px;width:34%;max-width:320px;height:62%;z-index:1;}
+  .closing-photo img{width:100%;height:100%;object-fit:contain;object-position:right bottom;display:block;border-bottom-left-radius:60px;}
+  .closing-circle{position:absolute;right:-6%;top:32%;width:46%;aspect-ratio:1;border-radius:50%;background:var(--navy-deep);opacity:1;z-index:0;}
+
+  /* logo wall — no white bg on this page */
+  .logo-wall-section{background-color:transparent;}
+
+  /* ============ RESPONSIVE ============ */
+  @container (max-width:560px){
+    .pad{padding:34px 30px 0;}
+  }
+  @media (max-width:680px){
+    body{padding:0;}
+    .deck{gap:24px;padding:32px 8px 36px;}
+    .sheet{aspect-ratio:auto;}
+    .pad{padding:30px 24px 0;}
+    .cols{grid-template-columns:1fr;gap:6px 0;}
+    .why-grid::before{left:18px;}
+    .why-row{grid-template-columns:1fr;}
+    .why-row.left .pill,.why-row.right .pill{grid-column:1;margin-left:34px;max-width:none;}
+    .why-row .dot{left:18px;}
+    .why-row.left .pill::after,.why-row.right .pill::after{left:-9px;right:auto;border-right-color:#2f6fc2;border-left-color:transparent;border-bottom-color:#2f6fc2;}
+    .trainer-photo{position:relative;width:70%;margin:10px auto 0;}
+    .quote{max-width:100%;}
+    .closing-body{max-width:100%;}
+    .closing-photo{position:relative;width:88%;margin:8px auto 0;bottom:0;}
+    .closing-circle{display:none;}
+    .bcard,.bcard.r{width:100%;}
+    .footerbar{position:static;padding:14px 22px;border-radius:0 0 14px 14px;margin-top:20px;}
+    .closing-body{padding-bottom:0!important;}
+    [style*="padding-bottom:128px"]{padding-bottom:24px!important;}
+    [style*="padding-bottom:74px"]{padding-bottom:20px!important;}
+  }
+</style>
+</head>
+<body>
+    <div class="container-1">
+        <div class="batch-info">
+            <div class="batch_desc">
+                <p>
+                    New batch starting from <span style="font-weight: 600;">June 4th at 9:00 AM IST</span> in
+                    <span style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span>
+                    Limited seats available
+                    <span class="alert"><i class="fa-solid fa-alarm-clock"></i></span>
+                </p>
+            </div>
+            <div class="batch_desc">
+                <p>
+                    New batch starting from <span style="font-weight: 600;">June 4th at 9:00 AM IST</span> in
+                    <span style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span>
+                    Limited seats available
+                    <span class="alert"><i class="fa-solid fa-alarm-clock"></i></span>
+                </p>
+            </div>
+            <div class="batch_desc">
+                <p>
+                    New batch starting from <span style="font-weight: 600;">June 4th at 9:00 AM IST</span> in
+                    <span style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span>
+                    Limited seats available
+                    <span class="alert"><i class="fa-solid fa-alarm-clock"></i></span>
+                </p>
+            </div>
+            <div class="batch_desc">
+                <p>
+                    New batch starting from <span style="font-weight: 600;">June 4th at 9:00 AM IST</span> in
+                    <span style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span>
+                    Limited seats available
+                    <span class="alert"><i class="fa-solid fa-alarm-clock"></i></span>
+                </p>
+            </div>
+            <div class="batch_desc">
+                <p>
+                    New batch starting from <span style="font-weight: 600;">June 4th at 9:00 AM IST</span> in
+                    <span style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span>
+                    Limited seats available
+                    <span class="alert"><i class="fa-solid fa-alarm-clock"></i></span>
+                </p>
+            </div>
+            <div class="batch_desc">
+                <p>
+                    New batch starting from <span style="font-weight: 600;">June 4th at 9:00 AM IST</span> in
+                    <span style="padding: 0.8rem; background-color: red; color: white;">TELUGU</span>
+                    Limited seats available
+                    <span class="alert"><i class="fa-solid fa-alarm-clock"></i></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <section class="navbar_container">
+        <nav>
+            <div class="hero_img">
+                <a href="index.html"><img src="assets/images/logo_hero.png" width="120" height="50" alt="decor"></a>
+            </div>
+            <button class="hamburger" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav_items">
+                <ul>
+                    <li style="margin-left: 20px;"><a href="index.html">Home</a></li>
+                    <li><a href="aviz-syllabus.html">Course curriculum</a></li>
+                    <li><a href="blog.html">Student Reviews</a></li>
+                    <li><a href="contactus.html">Contact us</a></li>
+                    <li><a class="highlight_practice" href="demosession.html">Demo</a></li>
+                    <li class="mobile_only_link"><a href="interviewprep.html" target="_blank" rel="noopener noreferrer">Interview prep</a></li>
+                </ul>
+            </div>
+            <div class="nav_btns">
+                <div class="btn_start">
+                    <a class="ctct" href="https://learnaws.co.in/" target="_blank" rel="noopener noreferrer"><button class="btn_1" type="button">Student Login</button></a>
+                    <a class="interview_prep_link" href="interviewprep.html" target="_blank" rel="noopener noreferrer">
+                        <button class="btn_2" type="button">Interview prep</button>
+                    </a>
+                    <a href="payments.html">
+                        <button class="btn_2" type="button"
+                            style="background-color: #618bff; color: white; border-color: #ffffff;">Pay Now</button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+<main class="deck">
+
+  <!-- ===================== PAGE 1 — COVER ===================== -->
+  <section class="sheet lightbg cover auto" data-screen-label="01" aria-label="Cover">
+    <div class="cover-wave"></div>
+    <div class="arrow-dots"></div>
+    <div class="pad">
+      <div class="topbar"><img class="logo" src="assets/images/logo.png" alt="Aviz Academy logo"></div>
+      <h1 class="title-aws">AWS+DevSecOps</h1>
+      <div class="handson">Hands-On</div>
+      <div class="ready-row">
+        <span class="hours-badge">120+ Hours</span>
+        <span class="job-ready">Job Ready Program</span>
+      </div>
+      <div class="hero-wrap"><img src="assets/images/Hero1.png" alt="Cloud with rising arrows"></div>
+      <p class="tagline">A career-launching, project-based training program designed for real-world skills.</p>
+      <div class="cover-contact">
+        <div class="cc-main">
+          <div class="cc-list">
+            <div class="cc-row">
+              <span class="ci wa"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>
+              +91 79977 77597
+            </div>
+            <div class="cc-row">
+              <span class="ci web"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#2f7ec6" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="4.5" y1="7" x2="19.5" y2="7"/><line x1="4.5" y1="17" x2="19.5" y2="17"/></svg></span>
+              www.avizacademy.com
+            </div>
+          </div>
+          <div class="qr-block">
+            <img src="assets/images/qrcode.png" alt="WhatsApp community QR code">
+            <span>Join Whatsapp Community</span>
+          </div>
+        </div>
+        <div class="cc-row addr">
+          <span class="ci pin"><svg width="17" height="17" viewBox="0 0 24 24" fill="#e0473e"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></span>
+          102, Sri Ikon Residency, Near Miyapur Metro, Mathrusree Nagar,&nbsp; Hyd, TG
+        </div>
+      </div>
+    </div>
+    <div class="cover-footstrip"></div>
+  </section>
+
+  <!-- ===================== PAGE 2 — TRAINER ===================== -->
+  <section class="sheet lightbg auto" data-screen-label="02" aria-label="Meet Your Trainer">
+    <div class="watermark"><span>AVIZ ACADEMY</span></div>
+    <div class="trainer-photo"><img src="assets/images/trainer-removebg-preview.png" alt="Avinash Reddy Thipparthi"></div>
+    <div class="pad" style="padding-bottom:54px;">
+      <div class="topbar"><img class="logo" src="assets/images/logo.png" alt="Aviz Academy logo"></div>
+      <h2 class="trainer-h">Meet Your Trainer - Avinash Reddy Thipparthi</h2>
+      <div class="rule"></div>
+      <div class="trainer-body">
+        <p><span class="o">Avinash Reddy Thipparthi</span> is a passionate DevOps and Cloud expert with 15 years of experience in the IT industry and over <span class="b">9 years of teaching</span> and mentoring professionals and students. With a strong foundation in real-time projects and hands-on training, he has helped thousands of learners build <span class="b">successful careers in cloud computing and DevOps.</span></p>
+        <p>He is a <span class="o">recognized AWS Community Builder</span> for the last three years and an official <span class="lb">Docker Captain</span>, earning global recognition for his contributions to the cloud and DevOps communities.</p>
+        <p>Avinash has impacted over <span class="b">50,000 learners</span> through various platforms including YouTube, Udemy, UrbanPro, classroom sessions, and dedicated online training programs. His YouTube channel, followed by 54,000+ subscribers, is widely appreciated for breaking down complex topics into simple, practical lessons making cloud and DevOps learning more accessible for everyone.</p>
+        <div class="cert-h">HE HOLDS A WIDE RANGE OF INDUSTRY CERTIFICATIONS:</div>
+        <ul class="cert-list">
+          <li><span class="ck">&#10003;</span> 8 AWS Certifications</li>
+          <li><span class="ck">&#10003;</span> 2 X Azure | GCP | RHEL | KCNA</li>
+        </ul>
+        <p style="max-width:60%;">Join Avinash and start your journey toward a successful career in DevOps and cloud computing with the right mentorship and hands-on experience.</p>
+        <div class="quote">
+          <p><span class="qm">&#10077;</span> <em>My goal is to make learning cloud and DevOps simple, practical, and career-focused. Whether you're starting fresh or making a switch, I'm here to guide you every step of the way.</em><span class="qm">&#10078;</span></p>
+          <div class="sig">&mdash;Avinash Reddy Thipparthi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PAGE 3 — AWS COURSE CONTENT (1) ===================== -->
+  <section class="sheet lightbg auto" data-screen-label="03" aria-label="AWS Course Content">
+    <div class="dotfield"></div>
+    <div class="pad" style="padding-bottom:60px;">
+      <div class="course-title-wrap"><span class="course-title">AWS Course Content</span></div>
+      <div class="cols">
+        <div class="col">
+          <div class="sec"><h3 class="sh h-blue">INTRODUCTION TO DEVOPS &amp; CLOUD</h3></div>
+          <div class="sec"><h3 class="sh h-blue">INTRODUCTION TO AWS</h3>
+            <ul class="list"><li>AWS Global infrastructure</li><li>AWS Account creation</li><li>MFA Configuration for root user</li><li>Free tier limitations overview</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-teal">COST MONITORING AND ALERTING</h3>
+            <ul class="list"><li>AWS Budgets</li><li>AWS Cost Explorer</li><li>AWS Simple Monthly calculator</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-blue">IDENTITY ACCESS MANAGEMENT</h3>
+            <ul class="list"><li>Root Account Vs IAM user</li><li>Multi Factor Authentication for Users</li><li>IAM Password Policies</li><li>Creating Customer Managed Policies.</li><li>Policy generator</li><li>IAM Policy Simulator</li><li>Auditing User Activity</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-teal">LINUX COURSE</h3>
+            <ul class="list"><li>What is Linux OS</li><li>Linux directory structure</li><li>Linux basic commands</li><li>File and Directory Management</li><li>Data manupulation commands</li><li>Understanding VIM Editor</li><li>Packaging Management with YUM and DNF</li><li>Apache and nginx install &amp; Configuration</li><li>Process Management</li><li>User Management</li><li>Permissions Management</li><li>Volume Management with EBS</li><li>Extending existing EBS Volumes</li><li>Advanced Linux commands</li></ul>
+          </div>
+        </div>
+        <div class="col">
+          <div class="sec"><h3 class="sh h-blue">COMPUTE</h3>
+            <ul class="list"><li>EC2 Instance Launch Wizard with Windows and Linux OS</li><li>EC2 Instance Types and Classes</li><li>Security groups</li><li>Amazon EBS Volumes and Snapshots</li><li>Amazon Data lifecycle manager (DLM)</li><li>Creating customized Amazon Machine Images</li><li>User Data and Metadata</li><li>Creating Alarm for EC2 instance.</li><li>CloudWatch Dashboard creation</li><li>Amazon Eventbridge</li><li>Elastic File System</li><li>Placement Groups</li><li>AWS CLI and IAM Roles</li><li>Custom EC2 Metrics with CW</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-teal">Load Balancing and Auto Scaling</h3>
+            <ul class="list"><li>Understanding Horizantal Scaling</li><li>understanding Load Balancing</li><li>Application Load Balancer</li><li>Network Load Balancer</li><li>Target Groups and Listeners</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-teal">Auto Scaling Group / ASG</h3>
+            <ul class="list"><li>Understanding Vertical Scaling</li><li>Understanding ASG</li><li>Manual Scaling</li><li>Step Scaling</li><li>Target Tracking Scaling</li><li>Schedule Scaling</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-orange">MINI PROJECT WITH AWS COMPONENTS</h3></div>
+        </div>
+      </div>
+    </div>
+    <div class="footerbar"><div style="height:8px;background:#4a93da;position:absolute;left:0;right:0;top:0;"></div></div>
+  </section>
+
+  <!-- ===================== PAGE 4 — AWS COURSE CONTENT (2) ===================== -->
+  <section class="sheet lightbg auto" data-screen-label="04" aria-label="AWS Course Content continued">
+    <div class="dotfield"></div>
+    <div class="watermark"><span>AVIZ ACADEMY</span></div>
+    <div class="pad" style="padding-top:46px;padding-bottom:74px;">
+      <div class="cols">
+        <div class="col">
+          <div class="sec"><h3 class="sh h-teal">AWS Systems Manager</h3>
+            <ul class="list"><li>Run Command</li><li>Session Manager</li><li>Resource Naming Standards in AWS</li><li>AWS Secrets Manager</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-blue">Route 53</h3>
+            <ul class="list"><li>Introduction to DNS</li><li>DNS Records overview</li><li>Routing Policies</li><li>Hosting Website with Policies.</li><li>Simple RP</li><li>Weighted RP</li><li>Failover RP</li><li>Geo Location RP</li><li>Failover RP</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-teal">STORAGE</h3>
+            <ul class="list"><li>What is Simple Storage Service (S3)</li><li>Storage Classes</li><li>Versioning</li><li>CRR &amp; SRR</li><li>Life Cycle Management</li><li>Security &amp; Encryption</li><li>Static Web Hosting with S3 bucket</li><li>Events configuration on S3 buckets</li><li>Enabling cross account access for S3</li><li>S3 Data management and backup using 3rd Party applications.</li><li>Pre-Signed URLs</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-teal">VPC (Virtual Private Cloud)</h3>
+            <ul class="list"><li>Understanding IP concept</li><li>Networking Basics</li><li>Creating custom VPCs &amp; Subnets</li><li>Network ACL's</li><li>Route Tables &amp; IGW</li><li>VPC Peering</li><li>Flowlog creation to S3 and CW Logs Group</li><li>VPC Endpoints</li><li>AWS Transit gateway</li><li>Site-to-Site VPN Configuration</li><li>Direct Connect</li></ul>
+          </div>
+        </div>
+        <div class="col">
+          <div class="sec"><h3 class="sh h-teal">Databases</h3>
+            <ul class="list"><li>Understanding Database Types</li><li>Launching a RDS DB Instances</li><li>Multi AZ Cluster/Instance</li><li>Read Replicas for RDS</li><li>DynamoDB</li><li>Redshift and Elastichache overview</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-teal">Migration Services</h3>
+            <ul class="list"><li>DMS - Database Migration Service</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-teal">Security Services:</h3>
+            <ul class="list"><li>CloudTrail</li><li>AWS Config</li><li>Key Management Services</li><li>AWS Certificate Manager</li><li>AWS Trusted Advisor</li><li>Content Delivery Networks / CloudFront</li><li>AWS Shield and WAF</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-blue">Application Services</h3>
+            <ul class="list"><li>Simple Notification Service</li><li>Lambda</li><li>API Gateway</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-blue">INTODUCTION TO IaaC TOOLS</h3>
+            <ul class="list"><li>Understanding YAML Basics</li><li>what is cloudformation</li><li>Understanding CFT components</li><li>Create resources using CFT</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-teal">AWS Multi Account Management</h3>
+            <ul class="list"><li>AWS Organizations</li><li>Amazon Single Sign-On</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="bigorange">2 AWS Capstone Projects on Monolithic and Serverless Architecture</div>
+    </div>
+    <div class="footerbar">
+      <span class="fitem"><svg width="22" height="22" viewBox="0 0 24 24" fill="#25d366"><circle cx="12" cy="12" r="11"/><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="#0c1226"/></svg> +91 79977 77597</span>
+      <span class="fitem"><span class="ico-box"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg></span> www.avizacademy.com</span>
+    </div>
+  </section>
+
+  <!-- ===================== PAGE 5 — DEVOPS CONTENT (1) ===================== -->
+  <section class="sheet lightbg auto" data-screen-label="05" aria-label="DevOps Course Content">
+    <div class="dotfield"></div>
+    <div class="watermark"><span>AVIZ ACADEMY</span></div>
+    <div class="pad" style="padding-top:54px;padding-bottom:74px;">
+      <div class="cols">
+        <div class="col">
+          <div class="sec"><h3 class="sh h-blue">Introduction to DevOps</h3>
+            <ul class="list"><li>Introduction to SDLC</li><li>Waterfall Model</li><li>Understanding Waterfall Model</li><li>Agile Methodology</li><li>DevOps History &amp; Lifecycle</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-teal">DevOps Services:</h3>
+            <ul class="list"><li>What is DevOps in Cloud</li><li>Code Pipeline</li><li>Code Build</li><li>Code Commit</li><li>Code Deploy</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-blue">Github:</h3>
+            <ul class="list"><li>Introduction to github</li><li>Basic Git Commands</li><li>Git status, add, commit, push</li><li>pull, clone, branch, merge</li><li>Git Webhooks</li><li>Integrating Git with AWS</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-blue">Introduction to Docker</h3>
+            <ul class="list"><li>Introduction to Containers</li><li>Understanding Docker Basics</li><li>Docker pull, images, rmi</li><li>Network modes in Docker</li><li>Writing Dockerfile</li><li>Multi Stage Dockerfile</li><li>Building Custom Images</li><li>Volume Management in Docker</li><li>Understanding DockerHub</li><li>Push images to Dockerhub</li><li>Resource Limits on Containers</li><li>Introduction to Docker Compose</li><li>Running services with compose</li></ul>
+          </div>
+        </div>
+        <div class="col">
+          <div class="sec"><h3 class="sh h-teal">Elastic Container Registry</h3>
+            <ul class="list"><li>Create a Repo in ECR</li><li>Push image to ECR</li><li>Push image to DockerHUB</li><li>Understanding <b>Docker Scout</b></li><li>Fixing Vulnurabilities on Images</li><li>Integrating <b>Trivy</b> for Security Scans</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-teal">AWS Container Services (ECS)</h3>
+            <ul class="list"><li>What is Elastic Container Service</li><li>Understanding ECS Task</li><li>Understanding ECS service</li><li>Integrating with Load Balancer &amp; ASG</li><li>Automating ECS deployments with CI/CD pipeline</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-blue">AWS Elastic Kubernetes Service (EKS)</h3>
+            <ul class="list"><li>What is Kubernetes?</li><li>understanding K8s Architecture</li><li>Node vs Pod Vs ReplicaSet</li><li>Understanding Services in K8s</li><li>ClusterIP Vs NodePort Vs Load Balancer</li><li>Creating and Managing EKS cluster</li><li>Configure <b>KUBECTL-AI</b></li><li>Vertical Pod AutoScaler</li><li>Horizontal Pod Autoscaler</li><li>Cluster AutoScaler</li><li>Using Goldilocks for resources analysis</li><li>Understanding <b>HELM</b></li><li>Preparing HELM chart for project</li><li>Ingress Controller / Application Load Balancer Controller</li><li>Understanding IAM Authentication and RBAC</li><li>EKS ControlPlane Logging</li><li>EKS Monitoring with <b>Cloudwatch</b></li><li>Understanding <b>Prometheus &amp; Grafana</b></li><li>Integrating with AWS Services i.e; ELB, CW</li><li>Creating AWS EKS Auto Mode</li><li>Creating EKS Fargate</li><li>Deploying project on EKS</li><li>Introduction to <b>SonarQube</b></li><li>Integrating Security to Code Quality</li><li>Understanding <b>OWASP</b></li><li>Introduction to Artifactory Management</li><li>Install and Configure <b>Nexus</b></li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footerbar">
+      <span class="fitem"><svg width="22" height="22" viewBox="0 0 24 24" fill="#25d366"><circle cx="12" cy="12" r="11"/><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="#0c1226"/></svg> +91 79977 77597</span>
+      <span class="fitem"><span class="ico-box"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg></span> www.avizacademy.com</span>
+    </div>
+  </section>
+
+  <!-- ===================== PAGE 6 — DEVOPS CONTENT (2) ===================== -->
+  <section class="sheet lightbg auto" data-screen-label="06" aria-label="DevOps Course Content continued">
+    <div class="dotfield"></div>
+    <div class="watermark"><span>AVIZ ACADEMY</span></div>
+    <div class="pad" style="padding-top:54px;padding-bottom:74px;">
+      <div class="cols">
+        <div class="col">
+          <div class="sec"><h3 class="sh h-teal">Introduction to Github Actions</h3>
+            <ul class="list"><li>Variables in GH Actions</li><li>Configuring Runners</li><li>AWS config using GHA</li><li>Runners in GH Actions</li><li>Accessing AWS using GHA</li><li>Deploy code to EC2 using GHA</li><li>Push Image to ECR using GHA</li><li>Perform CICD to ECS/EKS using GHA</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-teal">ArgoCD for GitOps</h3>
+            <ul class="list"><li>Understanding <b>GitOps</b></li><li>Understanding ArgoCD</li><li>Install and Configure ArgoCD</li><li>Deployment with Argo</li><li>Understanding Argo Rollout</li><li>Integrate AgroCD for EKS with GHA</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-teal">AWS AI Tools</h3>
+            <ul class="list"><li>Amazon KIRO CLI configuration</li><li>Copilot for Devops</li><li>Understanding Generative AI</li><li>Understanding Agentic AI</li><li>Configuring MCP Server</li><li>Amazon Bedrock</li><li>Amazon Q Configuration</li><li>Amazon Sagemaker overview</li></ul>
+          </div>
+        </div>
+        <div class="col">
+          <div class="sec"><h3 class="sh h-teal">Maven</h3>
+            <ul class="list"><li>What is Maven</li><li>Understanding maven lifecycle</li><li>Preparing war/jar files using maven</li></ul>
+          </div>
+          <div class="sec"><h3 class="sh h-blue">Introduction to Terraform</h3>
+            <ul class="list"><li>Getting Started with Terraform</li><li>Terraform Settings &amp; Version Management</li><li>Providers Overview</li><li>Provider Configuration</li><li>Lock and Upgrade Provider Versions</li><li>Terraform State Purpose &amp; Basics</li><li>Core Terraform Workflow</li><li>terraform init</li><li>terraform validate</li><li>terraform plan</li><li>terraform apply</li><li>terraform destroy</li><li>terraform fmt</li><li>Using Modules</li><li>Input Variables &amp; Output Values</li><li>TF Meta argumenta and Life Cycles</li><li>State file Management with local &amp; S3</li><li>TF Data blocks, Providers and Remoter-exec</li><li>Drift Detection in TF</li><li>Terraform HCP Console</li><li>Sentinel Polocies in TF</li></ul>
+          </div>
+          <div class="callouts">
+            <div class="callout"><span class="cv">&#10148;</span><p>2 Capstone projects on Micro-Service based architecture</p></div>
+            <div class="callout"><span class="cv">&#10148;</span><p>Interview Preparation &amp; Day-to-day Activity discussions</p></div>
+            <div class="callout teal"><span class="cv">&#10148;</span><p>Once in a Month in Person Meetup in Office</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footerbar">
+      <span class="fitem"><svg width="22" height="22" viewBox="0 0 24 24" fill="#25d366"><circle cx="12" cy="12" r="11"/><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="#0c1226"/></svg> +91 79977 77597</span>
+      <span class="fitem"><span class="ico-box"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg></span> www.avizacademy.com</span>
+    </div>
+  </section>
+
+  <!-- ===================== PAGE 7 — ADDITIONAL BENEFITS ===================== -->
+  <section class="sheet lightbg auto" data-screen-label="07" aria-label="Additional Benefits">
+    <div class="watermark"><span>AVIZ ACADEMY</span></div>
+    <div class="pad" style="padding-bottom:84px;">
+      <div class="benefits-title"><div class="t1">ADDITIONAL BENEFITS</div><div class="t2">and Learning Opportunities</div></div>
+      <div class="benefits">
+        <div class="bcard"><div class="icon"><img src="assets/images/icon1.png" alt=""></div><div class="body" style="--ac:#62a52b;">Capstone Projects Showcasing End-to-end Aws Services.</div></div>
+        <div class="bcard r"><div class="icon"><img src="assets/images/icon2.png" alt=""></div><div class="body" style="--ac:#f6871e;">Discussions on Quiz and Scenario Based Questions.</div></div>
+        <div class="bcard"><div class="icon"><img src="assets/images/icon3.png" alt=""></div><div class="body" style="--ac:#e0473e;">Key Resume Tips and an Overview of AWS Certifications.</div></div>
+        <div class="bcard r"><div class="icon"><img src="assets/images/icon4.png" alt=""></div><div class="body" style="--ac:#6a55c8;">Discussing Interview and Certification Exam Questions Alongside Topic discussions.</div></div>
+        <div class="bcard"><div class="icon"><img src="assets/images/icon5.png" alt=""></div><div class="body" style="--ac:#159cb4;">Offering complimentary Ansible, Shell, Jenkins courses to all registered participants.</div></div>
+        <div class="bcard r"><div class="icon"><img src="assets/images/icon6.png" alt=""></div><div class="body" style="--ac:#1c2a76;">Architecture simulator to understand concept better</div></div>
+      </div>
+    </div>
+    <div class="footerbar">
+      <span class="fitem"><svg width="22" height="22" viewBox="0 0 24 24" fill="#25d366"><circle cx="12" cy="12" r="11"/><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="#0c1226"/></svg> +91 79977 77597</span>
+      <span class="fitem"><span class="ico-box"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg></span> www.avizacademy.com</span>
+    </div>
+  </section>
+
+  <!-- ===================== PAGE 8 — CLOSING ===================== -->
+  <section class="sheet lightbg auto" data-screen-label="08" aria-label="Closing message">
+    <div class="watermark"><span>AVIZ</span></div>
+    <div class="closing-circle"></div>
+    <div class="closing-photo"><img src="assets/images/CloudOps-certification.png" alt="Avinash Reddy Thipparthi at work"></div>
+    <div class="pad" style="padding-bottom:128px;">
+      <div class="topbar"><img class="logo" src="assets/images/logo.png" alt="Aviz Academy logo"></div>
+      <h2 class="closing-h1">THIS ISN'T THE END OF A BROCHURE,</h2>
+      <div class="closing-badge-wrap"><span class="closing-badge">It's the start of your breakthrough.</span></div>
+      <div class="closing-body">
+        <p>To all my students, When you choose to learn with me, you're not just signing up for a course &mdash; you're beginning a career-changing journey. My commitment to you goes beyond sessions and slides. I'm here to support your growth, clear your doubts, guide your decisions, and celebrate your wins.</p>
+        <p>Whether you're a beginner stepping into IT or a working professional making the switch to cloud, you'll never walk this path alone. With every live session, every project, and every challenge &mdash; I'll be right there with you.</p>
+        <p><span class="o">This is my word to you :</span> I will teach you with clarity, mentor you with sincerity, and back you with everything I know. Your success is my mission. Let's not just learn DevOps and AWS &mdash; let's build a future you can be proud of.</p>
+        <div class="sig">-Avinash Reddy Thipparthi</div>
+      </div>
+    </div>
+    <div class="footerbar">
+      <span class="fitem"><svg width="22" height="22" viewBox="0 0 24 24" fill="#25d366"><circle cx="12" cy="12" r="11"/><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="#0c1226"/></svg> +91 79977 77597</span>
+      <span class="fitem"><span class="ico-box"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg></span> www.avizacademy.com</span>
+      <span class="addr"><svg width="16" height="16" viewBox="0 0 24 24" fill="#ff6b5e"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg> 102, Sri Ikon Residency, Near Miyapur Metro, Mathrusree Nagar,&nbsp; Hyd, TG</span>
+    </div>
+  </section>
+
+</main>
+
+    <!-- Student Placement Logos Section -->
+    <section class="logo-wall-section">
+        <div class="logo-wall-container">
+            <h2 class="logo-wall-title">Our students placed at</h2>
+            <div class="logo-marquee-wrapper">
+                <!-- Track 1: Left to Right -->
+                <div class="logo-track track-1">
+                    <div class="logo-item"><img src="assets/images/ec5be16b046b62a2a860b67f9dc55b86.webp" alt="Amazon"></div>
+                    <div class="logo-item"><img src="assets/images/ee17a1d06126f8bfc5444ad666e8ba21.webp" alt="Google"></div>
+                    <div class="logo-item"><img src="assets/images/1da11f6f0c244abc5abffc0556730e91.webp" alt="Microsoft"></div>
+                    <div class="logo-item"><img src="assets/images/9a47085894be9870158c9ad4e23c1a24.webp" alt="Goldman Sachs"></div>
+                    <div class="logo-item"><img src="assets/images/f226d6ddcb4f38c2c23f02008bbdf737.webp" alt="Samsung"></div>
+                    <div class="logo-item"><img src="assets/images/5a5a608278ba2b74aff5fb081f7df81c.webp" alt="Salesforce"></div>
+                    <div class="logo-item"><img src="assets/images/9e4198383730a6e7036b2c7cf50554d0.webp" alt="NetApp"></div>
+                    <div class="logo-item"><img src="assets/images/622a116daf32436d38271cd6c49ee3af.webp" alt="Hitachi"></div>
+                    <div class="logo-item"><img src="assets/images/b5070669b92945ffb20fadc3ea552d16.webp" alt="IBM"></div>
+                    <!-- Duplicates for seamless scroll -->
+                    <div class="logo-item"><img src="assets/images/ec5be16b046b62a2a860b67f9dc55b86.webp" alt="Amazon"></div>
+                    <div class="logo-item"><img src="assets/images/ee17a1d06126f8bfc5444ad666e8ba21.webp" alt="Google"></div>
+                    <div class="logo-item"><img src="assets/images/1da11f6f0c244abc5abffc0556730e91.webp" alt="Microsoft"></div>
+                    <div class="logo-item"><img src="assets/images/9a47085894be9870158c9ad4e23c1a24.webp" alt="Goldman Sachs"></div>
+                    <div class="logo-item"><img src="assets/images/f226d6ddcb4f38c2c23f02008bbdf737.webp" alt="Samsung"></div>
+                    <div class="logo-item"><img src="assets/images/TCS_Logo__cropped_-removebg-preview.png" alt="tcs"></div>
+                    <div class="logo-item"><img src="assets/images/Infosys-Logo.png" alt="Infosys"></div>
+                </div>
+                <!-- Track 2: Right to Left -->
+                <div class="logo-track track-2">
+                    <div class="logo-item"><img src="assets/images/0f683ab474c5a018baa3bdd53330c9ae.webp" alt="Dell"></div>
+                    <div class="logo-item"><img src="assets/images/Wipro-Logo-01-small.png" alt="wipro"></div>
+                    <div class="logo-item"><img src="assets/images/cfe53c7856b98c0bf010ebcfc8cbfa29.webp" alt="Deloitte"></div>
+                    <div class="logo-item"><img src="assets/images/f271b7c4e1a5c41745580804a2b2b458.webp" alt="KPMG"></div>
+                    <div class="logo-item"><img src="assets/images/91cb8fef8fe424a1ae2406aa58a380d8.webp" alt="Mercedes-Benz"></div>
+                    <div class="logo-item"><img src="assets/images/e24ce5f542c45a73c05172d9c4f38e2e.webp" alt="EY"></div>
+                    <div class="logo-item"><img src="assets/images/4d6e24add7d7c5d618aeef1795dba038.webp" alt="Airtel"></div>
+                    <div class="logo-item"><img src="assets/images/accentureLogo.webp" alt="Accenture"></div>
+                    <div class="logo-item"><img src="assets/images/bankofnewyorkLogo.webp" alt="BNY Mellon"></div>
+                    <!-- Duplicates for seamless scroll -->
+                    <div class="logo-item"><img src="assets/images/0f683ab474c5a018baa3bdd53330c9ae.webp" alt="Dell"></div>
+                    <div class="logo-item"><img src="assets/images/cfe53c7856b98c0bf010ebcfc8cbfa29.webp" alt="Deloitte"></div>
+                    <div class="logo-item"><img src="assets/images/f271b7c4e1a5c41745580804a2b2b458.webp" alt="KPMG"></div>
+                    <div class="logo-item"><img src="assets/images/91cb8fef8fe424a1ae2406aa58a380d8.webp" alt="Mercedes-Benz"></div>
+                    <div class="logo-item"><img src="assets/images/e24ce5f542c45a73c05172d9c4f38e2e.webp" alt="EY"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-------FOOTER---------->
+    <footer data-aos="fade-down" data-aos-duration="1000">
+        <div class="footer-section">
+            <div class="footer_mainContainer">
+                <div class="hero_cmpny">
+                    <img src="assets/images/avizacademy_logo_S.png" width="120" height="50" alt="awsavinash">
+                </div>
+                <div class="social_links">
+                    <a href="https://www.linkedin.com/in/avizway/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/awsavinash" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/awsavinash" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@avizway" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <div class="contact_details">
+                <div class="info_details">
+                    <div class="info2">
+                        <h3>Courses</h3>
+                        <ul class="courses_links">
+                            <li><a href="course.html" target="_blank" rel="noopener noreferrer">AWS Solutions Architect</a></li>
+                            <li><a href="course.html" target="_blank" rel="noopener noreferrer">DevSecOps Engineer</a></li>
+                        </ul>
+                    </div>
+                    <div class="info1">
+                        <h3>Contact us</h3>
+                        <div class="mail_contact">
+                            <i class="fa-regular fa-envelope"></i>
+                            <div class="mail_link">
+                                <a href="mailto:avizway@gmail.com">avizway@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="mail_contact">
+                            <i class="fa-regular fa-phone"></i>
+                            <div class="mail_link">
+                                <a href="tel:++91-799 777 7597">+91-799 777 7597</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info2">
+                        <h3>Address</h3>
+                        <div class="mail_contact">
+                            <p>Flat No:102,1st Floor, sri Ikon residency, Plot No 496, near Miyapur, Mathrusree Nagar,
+                                Hafeezpet, Hyderabad, Telangana 500049</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="designed_privacyCopyright">
+            <p>Designed by <a href="http://digitalwin.in" target="_blank">Digitalwin Technologies</a> Copyright
+                © 2025 | Privacy Policy
+            </p>
+        </div>
+    </footer>
+    <a href="https://wa.me/917997777597" class="whatsapp-link" target="_blank">
+        <img src="assets/images/whatsapp_img.png" width="100" height="100" alt="WhatsApp Icon" class="whatsapp-image">
+    </a>
+    <!------FOOTER ENDS------------->
+    <script src="assets/js/script.js" defer></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

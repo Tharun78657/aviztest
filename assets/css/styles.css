@@ -332,7 +332,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .btn_start button {
@@ -384,8 +384,16 @@ nav {
     animation: none;
 }
 
+.mobile_only_link {
+    display: none;
+}
+
 /* Mobile & Tablet Responsive Styles */
 @media screen and (max-width: 1024px) {
+    .mobile_only_link {
+        display: block;
+    }
+
     nav {
         padding-left: 20px;
         padding-right: 20px;
@@ -484,7 +492,8 @@ nav {
         font-size: 13px;
     }
 
-    .nav_btns .ctct {
+    .nav_btns .ctct,
+    .interview_prep_link {
         display: none;
     }
 }
@@ -1936,7 +1945,7 @@ span.enroll_btn {
     .coursedetails_mainContainer {
         padding: 10px !important;
     }
-    
+
     .pdf-viewer-wrapper {
         height: 500px !important;
         border-radius: 8px;
@@ -1948,6 +1957,7 @@ span.enroll_btn {
         height: 400px !important;
     }
 }
+
 /*----course preview ends------*/
 
 /*---------Testimonals-----------*/
@@ -3152,4 +3162,101 @@ button:disabled {
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Wall Section - Infinite Scroll */
+.logo-wall-section {
+    padding: 60px 0;
+    background-color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.logo-wall-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+
+.logo-wall-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.logo-marquee-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+
+.logo-track {
+    display: flex;
+    gap: 60px;
+    width: max-content;
+    align-items: center;
+}
+
+.track-1 {
+    animation: scroll-left 30s linear infinite;
+}
+
+.track-2 {
+    animation: scroll-right 30s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100% / 2));
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(calc(-100% / 2));
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.logo-item {
+    flex: 0 0 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-item img {
+    max-width: 140px;
+    height: auto;
+    filter: none;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.logo-item:hover img {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .logo-track {
+        gap: 30px;
+    }
+
+    .logo-item {
+        flex: 0 0 100px;
+    }
+
+    .logo-item img {
+        max-width: 80px;
+    }
 }
